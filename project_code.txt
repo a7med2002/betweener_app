@@ -1,0 +1,3061 @@
+===== D:\Android\kick_lance_project\betweener_app\analysis_options.yaml =====
+# This file configures the analyzer, which statically analyzes Dart code to
+# check for errors, warnings, and lints.
+#
+# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
+# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
+# invoked from the command line by running `flutter analyze`.
+
+# The following line activates a set of recommended lints for Flutter apps,
+# packages, and plugins designed to encourage good coding practices.
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  # The lint rules applied to this project can be customized in the
+  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
+  # included above or to enable additional rules. A list of all available lints
+  # and their documentation is published at https://dart.dev/lints.
+  #
+  # Instead of disabling a lint rule for the entire project in the
+  # section below, it can also be suppressed for a single line of code
+  # or a specific dart file by using the `// ignore: name_of_lint` and
+  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
+  # producing the lint.
+  rules:
+    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
+    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
+===== D:\Android\kick_lance_project\betweener_app\devtools_options.yaml =====
+description: This file stores settings for Dart & Flutter DevTools.
+documentation: https://docs.flutter.dev/tools/devtools/extensions#configure-extension-enablement-states
+extensions:
+===== D:\Android\kick_lance_project\betweener_app\pubspec.yaml =====
+name: betweeener_app
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+  http: ^1.5.0
+  shared_preferences: ^2.5.3
+  provider: ^6.1.5+1
+  flutter_svg: ^2.2.1
+  email_validator: ^3.0.0
+  flutter_slidable: ^4.0.3
+  qr_flutter: ^4.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^5.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/imgs/
+  #   - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/to/resolution-aware-images
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/to/asset-from-package
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package
+===== D:\Android\kick_lance_project\betweener_app\android\app\src\debug\AndroidManifest.xml =====
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- The INTERNET permission is required for development. Specifically,
+         the Flutter tool needs it to communicate with the running application
+         to allow setting breakpoints, to provide hot reload, etc.
+    -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+</manifest>
+===== D:\Android\kick_lance_project\betweener_app\android\app\src\main\AndroidManifest.xml =====
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
+        android:label="betweeener_app"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <!-- Specifies an Android theme to apply to this Activity as soon as
+                 the Android process has started. This theme is visible to the user
+                 while the Flutter UI initializes. After that, this theme continues
+                 to determine the Window background behind the Flutter UI. -->
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+    <!-- Required to query activities that can process text, see:
+         https://developer.android.com/training/package-visibility and
+         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+
+         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+    </queries>
+</manifest>
+===== D:\Android\kick_lance_project\betweener_app\android\app\src\main\res\drawable\launch_background.xml =====
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Modify this file to customize your launch splash screen -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@android:color/white" />
+
+    <!-- You can insert your own image assets here -->
+    <!-- <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@mipmap/launch_image" />
+    </item> -->
+</layer-list>
+===== D:\Android\kick_lance_project\betweener_app\android\app\src\main\res\drawable-v21\launch_background.xml =====
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Modify this file to customize your launch splash screen -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="?android:colorBackground" />
+
+    <!-- You can insert your own image assets here -->
+    <!-- <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@mipmap/launch_image" />
+    </item> -->
+</layer-list>
+===== D:\Android\kick_lance_project\betweener_app\android\app\src\main\res\values\styles.xml =====
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme applied to the Android Window while the process is starting when the OS's Dark Mode setting is off -->
+    <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <!-- Show a splash screen on the activity. Automatically removed when
+             the Flutter engine draws its first frame -->
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
+    <!-- Theme applied to the Android Window as soon as the process has started.
+         This theme determines the color of the Android Window while your
+         Flutter UI initializes, as well as behind your Flutter UI while its
+         running.
+
+         This Theme is only used starting with V2 of Flutter's Android embedding. -->
+    <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+</resources>
+===== D:\Android\kick_lance_project\betweener_app\android\app\src\main\res\values-night\styles.xml =====
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme applied to the Android Window while the process is starting when the OS's Dark Mode setting is on -->
+    <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <!-- Show a splash screen on the activity. Automatically removed when
+             the Flutter engine draws its first frame -->
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
+    <!-- Theme applied to the Android Window as soon as the process has started.
+         This theme determines the color of the Android Window while your
+         Flutter UI initializes, as well as behind your Flutter UI while its
+         running.
+
+         This Theme is only used starting with V2 of Flutter's Android embedding. -->
+    <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+</resources>
+===== D:\Android\kick_lance_project\betweener_app\android\app\src\profile\AndroidManifest.xml =====
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- The INTERNET permission is required for development. Specifically,
+         the Flutter tool needs it to communicate with the running application
+         to allow setting breakpoints, to provide hot reload, etc.
+    -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+</manifest>
+===== D:\Android\kick_lance_project\betweener_app\ios\Runner\Assets.xcassets\AppIcon.appiconset\Contents.json =====
+{
+  "images" : [
+    {
+      "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-20x20@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-20x20@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-29x29@1x.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-29x29@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-29x29@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-40x40@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-40x40@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-60x60@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-60x60@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "size" : "20x20",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-20x20@1x.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "20x20",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-20x20@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-29x29@1x.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-29x29@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-40x40@1x.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-40x40@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-76x76@1x.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-76x76@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "83.5x83.5",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-83.5x83.5@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "Icon-App-1024x1024@1x.png",
+      "scale" : "1x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\ios\Runner\Assets.xcassets\LaunchImage.imageset\Contents.json =====
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "LaunchImage.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "LaunchImage@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "LaunchImage@3x.png",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\main.dart =====
+import 'package:betweeener_app/views_features/auth/login_view.dart';
+import 'package:betweeener_app/views_features/auth/register_view.dart';
+import 'package:betweeener_app/views_features/home/home_view.dart';
+import 'package:betweeener_app/views_features/links/add_link_view.dart';
+import 'package:betweeener_app/views_features/links/edit_link_view.dart';
+import 'package:betweeener_app/views_features/loading/loading_view.dart';
+import 'package:betweeener_app/views_features/main_app_view.dart';
+import 'package:betweeener_app/views_features/onboarding/onbording_view.dart';
+import 'package:betweeener_app/views_features/profile/friend_profile_view.dart';
+import 'package:betweeener_app/views_features/profile/profile_view.dart';
+import 'package:betweeener_app/views_features/recieve/receive_view.dart';
+import 'package:betweeener_app/views_features/search/search_view.dart';
+import 'package:flutter/material.dart';
+import 'core/util/constants.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Betweener',
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: kPrimaryColor,
+        appBarTheme: const AppBarTheme(
+          titleTextStyle: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: kPrimaryColor,
+          ),
+        ),
+        scaffoldBackgroundColor: kScaffoldColor,
+      ),
+      home: const LoadingView(),
+      routes: {
+        OnBoardingView.id: (context) => const OnBoardingView(),
+        LoadingView.id: (context) => const LoadingView(),
+        LoginView.id: (context) => const LoginView(),
+        RegisterView.id: (context) => const RegisterView(),
+        HomeView.id: (context) => const HomeView(),
+        MainAppView.id: (context) => const MainAppView(),
+        ProfileView.id: (context) => const ProfileView(),
+        ReceiveView.id: (context) => const ReceiveView(),
+        AddLinkView.id: (context) => const AddLinkView(),
+        EditLinkView.id: (context) => const EditLinkView(),
+        SearchView.id: (context) => const SearchView(),
+        FriendProfileView.id: (contex) => const FriendProfileView(),
+      },
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\controllers\auth_controller.dart =====
+import 'package:betweeener_app/models/user.dart';
+import 'package:http/http.dart' as http;
+import '../core/util/constants.dart';
+
+Future<User> login(Map<String, String> body) async {
+  final response = await http.post(Uri.parse(loginUrl), body: body);
+  if (response.statusCode == 200) {
+    return userFromJson(response.body);
+  } else {
+    throw Exception('Failed to Login');
+  }
+}
+
+Future<User> register(Map<String, String> body) async {
+  final response = await http.post(Uri.parse(registerUrl), body: body);
+  if (response.statusCode == 201) {
+    return userFromJson(response.body);
+  } else {
+    throw Exception('Failed to Register');
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\controllers\link_controller.dart =====
+import 'dart:convert';
+
+import 'package:betweeener_app/core/util/constants.dart';
+import 'package:betweeener_app/models/user.dart';
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../models/link_response_model.dart';
+import 'package:http/http.dart' as http;
+
+Future<List<LinkElement>> getUserLinks() async {
+  late User user;
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  user = userFromJson(prefs.getString('user')!);
+  final response = await http.get(
+    Uri.parse(linksUrl),
+    headers: {'Authorization': 'Bearer ${user.token}'},
+  );
+
+  if (response.statusCode == 200) {
+    Map<String, dynamic> responseBody = jsonDecode(response.body);
+    Link linksData = Link.fromJson(responseBody);
+    return linksData.links;
+  } else {
+    return Future.error("Error Fetch Links !!");
+  }
+}
+
+Future<void> addLink(BuildContext context, Map<String, String> body) async {
+  late User user;
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  user = userFromJson(prefs.getString('user')!);
+  final response = await http.post(
+    Uri.parse(linksUrl),
+    body: body,
+    headers: {'Authorization': 'Bearer ${user.token}'},
+  );
+  if (response.statusCode == 200) {
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text("Link Added Successfully ✅")));
+  } else {
+    Future.error("Error Add Link !!");
+  }
+}
+
+Future<void> updateLink(
+  BuildContext context,
+  Map<String, String> body,
+  int linkId,
+) async {
+  late User user;
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  user = userFromJson(prefs.getString('user')!);
+  final response = await http.put(
+    Uri.parse('$linksUrl/$linkId'),
+    body: body,
+    headers: {'Authorization': 'Bearer ${user.token}'},
+  );
+  if (response.statusCode == 200) {
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text("Link Updated Successfully ✅")));
+  } else {
+    throw Exception("Error in update link!");
+  }
+}
+
+Future<void> deleteLink(BuildContext context, int linkId) async {
+  late User user;
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  user = userFromJson(prefs.getString('user')!);
+  final response = await http.delete(
+    Uri.parse("$linksUrl/$linkId"),
+    headers: {'Authorization': 'Bearer ${user.token}'},
+  );
+
+  if (response.statusCode == 200) {
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text("Link Deleted Successfully ✅")));
+  } else {
+    throw Exception("Error in delete link!");
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\controllers\user_controller.dart =====
+import 'dart:convert';
+
+import 'package:betweeener_app/core/util/constants.dart';
+import 'package:betweeener_app/views_features/auth/login_view.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
+import '../models/user.dart';
+
+Future<User> getCurrentUser(BuildContext context) async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  if (prefs.containsKey('user')) {
+    return userFromJson(prefs.getString('user')!);
+  } else {
+    Navigator.pushReplacementNamed(context, LoginView.id);
+    return Future.error('User Not Found');
+  }
+}
+
+Future<Map<String, dynamic>> getUserFollows() async {
+  final prefs = await SharedPreferences.getInstance();
+  final User user = userFromJson(prefs.getString('user')!);
+  final response = await http.get(
+    Uri.parse(followUrl),
+    headers: {'Authorization': 'Bearer ${user.token}'},
+  );
+  if (response.statusCode == 200) {
+    final Map<String, dynamic> userFollow = jsonDecode(response.body);
+    return userFollow;
+  } else {
+    return Future.error("Failed to Fetch Follows");
+  }
+}
+
+Future<List<UserClass>> searchUser(String userName) async {
+  final body = {'name': userName};
+  late User user;
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  user = userFromJson(prefs.getString('user')!);
+  final response = await http.post(
+    Uri.parse(searchUrl),
+    body: body,
+    headers: {'Authorization': 'Bearer ${user.token}'},
+  );
+  if (response.statusCode == 200) {
+    final responseData = jsonDecode(response.body);
+
+    List<UserClass> resultUsers = (responseData['user'] as List)
+        .map((user) => UserClass.fromJson(user))
+        .toList();
+
+    return resultUsers;
+  } else {
+    return Future.error("Error in Search!!");
+  }
+}
+
+Future<void> followUser(Map<String, String> body) async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  User user = userFromJson(prefs.getString('user')!);
+  final response = await http.post(
+    Uri.parse(followUrl),
+    body: body,
+    headers: {'Authorization': 'Bearer ${user.token}'},
+  );
+
+  if (response.statusCode == 200) {
+    print("Follow Succesfully");
+  } else {
+    Future.error("Error In Follow User!");
+  }
+}
+
+Future<bool> checkIfIsFollowing(int friendId) async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  User user = userFromJson(prefs.getString('user')!);
+
+  final response = await http.get(
+    Uri.parse(followUrl),
+    headers: {'Authorization': 'Bearer ${user.token}'},
+  );
+  if (response.statusCode == 200) {
+    final responseBody = jsonDecode(response.body);
+    final List following = responseBody['following'];
+    for (var friend in following) {
+      if (friend['id'] == friendId) {
+        return true;
+      }
+    }
+    return false;
+  } else {
+    return Future.error("Failed to check follow status");
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\core\helpers\api_base_helper.dart =====
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:betweeener_app/core/util/constants.dart';
+import 'package:http/http.dart' as http;
+
+import 'app_exception.dart';
+
+class ApiBaseHelper {
+  Future<dynamic> get(String url, Map<String, String> header) async {
+    var responseJson;
+    try {
+      final response = await http.get(
+        Uri.parse(baseUrl + url),
+        headers: header,
+      );
+
+      responseJson = _returnResponse(response);
+    } on SocketException {
+      throw FetchDataException('No Internet connection');
+    }
+    return responseJson;
+  }
+
+  Future<dynamic> post(
+    String url,
+    Map<String, dynamic> body,
+    Map<String, String> header,
+  ) async {
+    var responseJson;
+    try {
+      final response = await http.post(
+        Uri.parse(baseUrl + url),
+        body: body,
+        headers: header,
+      );
+
+      responseJson = _returnResponse(response);
+    } on SocketException {
+      throw FetchDataException('No Internet connection');
+    }
+    return responseJson;
+  }
+
+  dynamic _returnResponse(http.Response response) {
+    switch (response.statusCode) {
+      case 200:
+      case 201:
+        var responseJson = json.decode(response.body);
+        return responseJson;
+      case 400:
+        throw BadRequestException(response.body);
+      case 401:
+      case 403:
+        throw UnauthorisedException(response.body);
+      case 500:
+      default:
+        throw FetchDataException(
+          'Error occurred while Communication with Server with StatusCode : ${response.statusCode}',
+        );
+    }
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\core\helpers\api_response.dart =====
+class ApiResponse<T> {
+  Status status;
+  T? data;
+  String? message;
+
+  ApiResponse.loading(this.message) : status = Status.LOADING;
+  ApiResponse.completed(this.data) : status = Status.COMPLETED;
+  ApiResponse.error(this.message) : status = Status.ERROR;
+
+  @override
+  String toString() {
+    return "Status : $status \n Message : $message \n Data : $data";
+  }
+}
+
+enum Status { LOADING, COMPLETED, ERROR }
+===== D:\Android\kick_lance_project\betweener_app\lib\core\helpers\app_exception.dart =====
+class AppException implements Exception {
+  final _message;
+  final _prefix;
+
+  AppException([this._message, this._prefix]);
+
+  @override
+  String toString() {
+    return "$_prefix$_message";
+  }
+}
+
+class FetchDataException extends AppException {
+  FetchDataException(message) : super(message, "Error During Communication: ");
+}
+
+class BadRequestException extends AppException {
+  BadRequestException([message]) : super(message, "Invalid Request: ");
+}
+
+class UnauthorisedException extends AppException {
+  UnauthorisedException([message]) : super(message, "Unauthorised: ");
+}
+
+class InvalidInputException extends AppException {
+  InvalidInputException([message]) : super(message, "Invalid Input: ");
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\core\helpers\shared_prefs.dart =====
+import 'package:shared_preferences/shared_preferences.dart';
+
+class SharedPrefsController {
+  SharedPreferences? _prefs;
+
+  static final SharedPrefsController _instance =
+      SharedPrefsController._internal();
+
+  factory SharedPrefsController() {
+    return _instance;
+  }
+
+  Future<void> _checkInstance() async {
+    if (_prefs == null) {
+      await init();
+    }
+  }
+
+  SharedPrefsController._internal();
+
+  Future<void> init() async {
+    _prefs = await SharedPreferences.getInstance();
+  }
+
+  Future<bool?> setData(String key, dynamic data) async {
+    await _checkInstance();
+    switch (data.runtimeType) {
+      case int:
+        return _prefs?.setInt(key, data);
+      case String:
+        return _prefs?.setString(key, data);
+      case bool:
+        return _prefs?.setBool(key, data);
+    }
+    return null;
+  }
+
+  Future<dynamic> getData(String key) async {
+    await _checkInstance();
+    return _prefs?.get(key);
+  }
+
+  // Future<bool> shouldShowOnboarding() async {
+  //   await _checkInstance();
+  //   bool onboardingShown = _prefs?.getBool(_onBoardingKey) ?? false;
+  //   return !onboardingShown;
+  // }
+  //
+  // Future<void> setOnboardingShown() async {
+  //   await _checkInstance();
+  //   await _prefs?.setBool(_onBoardingKey, true);
+  // }
+
+  //for example if the logged in is user
+  // Future<bool> saveLoginData(UserSignInModel user) async {
+  //   await _checkInstance();
+  //   try {
+  //     await _prefs?.setString('token', 'Bearer ${user.token}');
+  //     await _prefs?.setString('id', user.user.id.toString());
+  //     print(user.token);
+  //     return true;
+  //   } catch (e) {
+  //     return false;
+  //   }
+  // }
+  //complete the rest of variable methode in the same way
+  // all variable in the enum above are same variable in the model user
+
+  // Future<bool> saveSignup(UserSignUpModel user) async {
+  //   await _checkInstance();
+  //   try {
+  //     await _prefs?.setString('id', user.user.id.toString());
+  //     await _prefs?.setString('token', 'Bearer ${user.token}');
+  //     return true;
+  //   } catch (e) {
+  //     return false;
+  //   }
+  // }
+
+  // Future<T?> getValueFor<T>(String key) async {
+  //   await _checkInstance();
+  //   if (_prefs!.containsKey(key)) {
+  //     return _prefs?.get(key) as T;
+  //   }
+  //   return null;
+  // }
+  //
+  // Future<bool?> clear() async {
+  //   await _checkInstance();
+  //   return _prefs?.clear();
+  // }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\core\helpers\token_helper.dart =====
+import 'package:betweeener_app/core/helpers/shared_prefs.dart';
+
+Future<String> getToken() async {
+  return await SharedPrefsController().getData('token');
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\core\util\assets.dart =====
+class AssetsData {
+  static const onBoardingImage = 'assets/imgs/onboarding.svg';
+  static const authImage = 'assets/imgs/auth.svg';
+  static const qrImage = 'assets/imgs/qr_code.png';
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\core\util\constants.dart =====
+import 'package:flutter/material.dart';
+
+// ============= END POINTS ==============
+
+const baseUrl = 'https://betweener.kicklance.com/api';
+const loginUrl = '$baseUrl/login';
+const registerUrl = '$baseUrl/register';
+const linksUrl = '$baseUrl/links';
+const followUrl = '$baseUrl/follow';
+const searchUrl = '$baseUrl/search';
+
+// ============= STYLE CONSTS ==============
+
+const kScaffoldColor = Color(0xffFDFDFD);
+const kRedColor = Color(0xffA90606);
+
+const kPrimaryColor = Color(0xff2D2B4E);
+const kSecondaryColor = Color(0xffFFD465);
+const kOnSecondaryColor = Color(0xff784E00);
+const kDangerColor = Color(0xffF56C61);
+
+// Low Opacity Colors
+const kLinksColor = Color(0xff807D99);
+const kLightPrimaryColor = Color(0xffE7E5F1);
+const kLightSecondaryColor = Color(0xffFFE6A6);
+const kLightDangerColor = Color(0xffFEE2E7);
+const kOnLightDangerColor = Color(0xff783341);
+===== D:\Android\kick_lance_project\betweener_app\lib\core\util\styles.dart =====
+import 'package:flutter/material.dart';
+
+import 'constants.dart';
+
+abstract class Styles {
+  static OutlineInputBorder primaryRoundedOutlineInputBorder =
+      OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: const BorderSide(color: kPrimaryColor, width: 2),
+      );
+
+  static const textStyle14 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: kPrimaryColor,
+  );
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\models\link_response_model.dart =====
+// To parse this JSON data, do
+//
+//     final link = linkFromJson(jsonString);
+
+import 'dart:convert';
+
+Link linkFromJson(String str) => Link.fromJson(json.decode(str));
+
+String linkToJson(Link data) => json.encode(data.toJson());
+
+class Link {
+    List<LinkElement> links;
+
+    Link({
+        required this.links,
+    });
+
+    factory Link.fromJson(Map<String, dynamic> json) => Link(
+        links: List<LinkElement>.from(json["links"].map((x) => LinkElement.fromJson(x))),
+    );
+
+    Map<String, dynamic> toJson() => {
+        "links": List<dynamic>.from(links.map((x) => x.toJson())),
+    };
+}
+
+class LinkElement {
+    int id;
+    String title;
+    String link;
+    String? username;
+    int isActive;
+    int userId;
+    DateTime createdAt;
+    DateTime updatedAt;
+
+    LinkElement({
+        required this.id,
+        required this.title,
+        required this.link,
+        required this.username,
+        required this.isActive,
+        required this.userId,
+        required this.createdAt,
+        required this.updatedAt,
+    });
+
+    factory LinkElement.fromJson(Map<String, dynamic> json) => LinkElement(
+        id: json["id"],
+        title: json["title"],
+        link: json["link"],
+        username: json["username"],
+        isActive: json["isActive"],
+        userId: json["user_id"],
+        createdAt: DateTime.parse(json["created_at"]),
+        updatedAt: DateTime.parse(json["updated_at"]),
+    );
+
+    Map<String, dynamic> toJson() => {
+        "id": id,
+        "title": title,
+        "link": link,
+        "username": username,
+        "isActive": isActive,
+        "user_id": userId,
+        "created_at": createdAt.toIso8601String(),
+        "updated_at": updatedAt.toIso8601String(),
+    };
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\models\user.dart =====
+// To parse this JSON data, do
+//
+//     final user = userFromJson(jsonString);
+
+import 'dart:convert';
+
+User userFromJson(String str) => User.fromJson(json.decode(str));
+
+String userToJson(User data) => json.encode(data.toJson());
+
+class User {
+  UserClass? user;
+  String? token;
+
+  User({this.user, this.token});
+
+  factory User.fromJson(Map<String, dynamic> json) => User(
+    user: json["user"] == null ? null : UserClass.fromJson(json["user"]),
+    token: json["token"],
+  );
+
+  Map<String, dynamic> toJson() => {"user": user?.toJson(), "token": token};
+}
+
+class UserClass {
+  int? id;
+  String? name;
+  String? email;
+  dynamic emailVerifiedAt;
+  String? createdAt;
+  String? updatedAt;
+  int? isActive;
+  dynamic country;
+  dynamic ip;
+  dynamic long;
+  dynamic lat;
+
+  UserClass({
+    this.id,
+    this.name,
+    this.email,
+    this.emailVerifiedAt,
+    this.createdAt,
+    this.updatedAt,
+    this.isActive,
+    this.country,
+    this.ip,
+    this.long,
+    this.lat,
+  });
+
+  factory UserClass.fromJson(Map<String, dynamic> json) => UserClass(
+    id: json["id"],
+    name: json["name"],
+    email: json["email"],
+    emailVerifiedAt: json["email_verified_at"],
+    createdAt: json["created_at"],
+    updatedAt: json["updated_at"],
+    isActive: json["isActive"],
+    country: json["country"],
+    ip: json["ip"],
+    long: json["long"],
+    lat: json["lat"],
+  );
+
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "name": name,
+    "email": email,
+    "email_verified_at": emailVerifiedAt,
+    "created_at": createdAt,
+    "updated_at": updatedAt,
+    "isActive": isActive,
+    "country": country,
+    "ip": ip,
+    "long": long,
+    "lat": lat,
+  };
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\main_app_view.dart =====
+import 'package:betweeener_app/views_features/profile/profile_view.dart';
+import 'package:betweeener_app/views_features/recieve/receive_view.dart';
+import 'package:betweeener_app/views_features/widgets/custom_floating_nav_bar.dart';
+import 'package:flutter/material.dart';
+
+import 'home/home_view.dart';
+
+class MainAppView extends StatefulWidget {
+  static String id = '/mainAppView';
+
+  const MainAppView({super.key});
+
+  @override
+  State<MainAppView> createState() => _MainAppViewState();
+}
+
+class _MainAppViewState extends State<MainAppView> {
+  int _currentIndex = 1;
+
+  late List<Widget?> screensList = [
+    const ReceiveView(),
+    const HomeView(),
+    const ProfileView(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+      body: screensList[_currentIndex],
+      extendBody: true,
+      bottomNavigationBar: CustomFloatingNavBar(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\auth\login_view.dart =====
+import 'package:betweeener_app/core/util/assets.dart';
+import 'package:betweeener_app/models/user.dart';
+import 'package:betweeener_app/views_features/auth/register_view.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:email_validator/email_validator.dart';
+
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../controllers/auth_controller.dart';
+import '../main_app_view.dart';
+import '../widgets/custom_text_form_field.dart';
+import '../widgets/google_button_widget.dart';
+import '../widgets/primary_outlined_button_widget.dart';
+import '../widgets/secondary_button_widget.dart';
+
+class LoginView extends StatefulWidget {
+  static String id = '/loginView';
+
+  const LoginView({super.key});
+
+  @override
+  State<LoginView> createState() => _LoginViewState();
+}
+
+class _LoginViewState extends State<LoginView> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+
+  void submitLogin() {
+    if (_formKey.currentState!.validate()) {
+      final body = {
+        'email': emailController.text,
+        'password': passwordController.text,
+      };
+
+      login(body)
+          .then((user) async {
+            final SharedPreferences prefs =
+                await SharedPreferences.getInstance();
+            await prefs.setString('user', userToJson(user));
+
+            if (mounted) {
+              Navigator.pushReplacementNamed(context, MainAppView.id);
+            }
+          })
+          .catchError((error) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(error.toString()),
+                backgroundColor: Colors.red,
+              ),
+            );
+          });
+
+      // Navigator.pushNamed(context, MainAppView.id);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 32.0),
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height,
+            child: Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  const Spacer(),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height / 5,
+                    child: Hero(
+                      tag: 'authImage',
+                      child: SvgPicture.asset(AssetsData.authImage),
+                    ),
+                  ),
+                  const Spacer(),
+                  CustomTextFormField(
+                    controller: emailController,
+                    hint: 'example@gmail.com',
+                    keyboardType: TextInputType.emailAddress,
+                    autofillHints: const [AutofillHints.email],
+                    label: 'Email',
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'please enter the email';
+                      } else if (!EmailValidator.validate(value)) {
+                        return 'please enter a valid email';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 14),
+                  CustomTextFormField(
+                    controller: passwordController,
+                    hint: 'Enter password',
+                    label: 'password',
+                    autofillHints: const [AutofillHints.password],
+                    password: true,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'please enter the password';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 24),
+                  SecondaryButtonWidget(onTap: submitLogin, text: 'LOGIN'),
+                  const SizedBox(height: 24),
+                  PrimaryOutlinedButtonWidget(
+                    onTap: () {
+                      Navigator.pushNamed(context, RegisterView.id);
+                    },
+                    text: 'REGISTER',
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    '-  or  -',
+                    style: TextStyle(
+                      color: Colors.grey.shade500,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  GoogleButtonWidget(onTap: () {}),
+                  const Spacer(),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\auth\register_view.dart =====
+import 'package:betweeener_app/controllers/auth_controller.dart';
+import 'package:betweeener_app/core/util/assets.dart';
+import 'package:betweeener_app/views_features/auth/login_view.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../widgets/custom_text_form_field.dart';
+import '../widgets/google_button_widget.dart';
+import '../widgets/secondary_button_widget.dart';
+
+class RegisterView extends StatefulWidget {
+  static String id = '/registerView';
+
+  const RegisterView({super.key});
+
+  @override
+  State<RegisterView> createState() => _RegisterViewState();
+}
+
+class _RegisterViewState extends State<RegisterView> {
+  TextEditingController nameController = TextEditingController();
+
+  TextEditingController emailController = TextEditingController();
+
+  TextEditingController passwordController = TextEditingController();
+
+  final _formKey = GlobalKey<FormState>();
+
+  void submitRigster() {
+    if (_formKey.currentState!.validate()) {
+      final body = {
+        'name': nameController.text,
+        'email': emailController.text,
+        'password': passwordController.text,
+        'password_confirmation': passwordController.text,
+      };
+      register(body)
+          .then((user) {
+            if (mounted) {
+              Navigator.pushReplacementNamed(context, LoginView.id);
+            }
+          })
+          .catchError((error) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(error.toString()),
+                backgroundColor: Colors.red,
+              ),
+            );
+          });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Register"),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back_ios),
+          //replace with our own icon data.
+        ),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        centerTitle: true,
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 32.0),
+          child: SizedBox(
+            height:
+                MediaQuery.of(context).size.height -
+                AppBar().preferredSize.height,
+            child: Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  const Spacer(),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height / 8,
+                    child: Hero(
+                      tag: 'authImage',
+                      child: SvgPicture.asset(AssetsData.authImage),
+                    ),
+                  ),
+                  const SizedBox(height: 24),
+                  CustomTextFormField(
+                    controller: nameController,
+                    hint: 'John Doe',
+                    label: 'Name',
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "name can't be empty";
+                      }
+                    },
+                  ),
+                  const SizedBox(height: 14),
+                  CustomTextFormField(
+                    controller: emailController,
+                    hint: 'example@gmail.com',
+                    label: 'Email',
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "email can't be empty";
+                      }
+                    },
+                  ),
+                  const SizedBox(height: 14),
+                  CustomTextFormField(
+                    controller: passwordController,
+                    hint: 'Enter password',
+                    label: 'password',
+                    password: true,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "password can't be empty";
+                      }
+                    },
+                  ),
+                  const SizedBox(height: 24),
+                  SecondaryButtonWidget(
+                    onTap: () => submitRigster(),
+                    text: 'REGISTER',
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    '-  or  -',
+                    style: TextStyle(
+                      color: Colors.grey.shade500,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  GoogleButtonWidget(onTap: () {}),
+                  const Spacer(),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\home\home_view.dart =====
+import 'package:betweeener_app/controllers/link_controller.dart';
+import 'package:betweeener_app/controllers/user_controller.dart';
+import 'package:betweeener_app/views_features/auth/login_view.dart';
+import 'package:betweeener_app/views_features/links/add_link_view.dart';
+import 'package:betweeener_app/views_features/search/search_view.dart';
+import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../core/util/constants.dart';
+import '../../models/link_response_model.dart';
+import '../../models/user.dart';
+
+class HomeView extends StatefulWidget {
+  static String id = '/homeView';
+  const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  late Future<User> user;
+  late Future<List<LinkElement>> links;
+
+  @override
+  void initState() {
+    user = getCurrentUser(context);
+    links = getUserLinks();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () async {
+            SharedPreferences prefs = await SharedPreferences.getInstance();
+            await prefs.remove('user');
+            Navigator.pushReplacementNamed(context, LoginView.id);
+          },
+          icon: Icon(Icons.logout_rounded, color: Colors.red),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, SearchView.id);
+            },
+            icon: Icon(Icons.search),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.qr_code_scanner_outlined),
+          ),
+        ],
+        elevation: 0,
+        surfaceTintColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
+        automaticallyImplyLeading: false,
+      ),
+      body: RefreshIndicator(
+        onRefresh: () async => await getUserLinks(),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: ListView(
+            children: [
+              FutureBuilder(
+                future: user,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Text("Loading ..");
+                  } else if (snapshot.hasData) {
+                    return Text(
+                      "Hello, ${snapshot.data!.user!.name} !",
+                      style: TextStyle(
+                        color: kPrimaryColor,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    );
+                  } else {
+                    return Text("Error !!");
+                  }
+                },
+              ),
+              SizedBox(height: 24),
+              FutureBuilder(
+                future: user,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Center(child: CircularProgressIndicator());
+                  } else {
+                    return Center(
+                      child: QrImageView(
+                        data: snapshot.data!.token!,
+                        foregroundColor: kPrimaryColor,
+                        version: QrVersions.auto,
+                        backgroundColor: Colors.transparent,
+                        size: 300,
+                      ),
+                    );
+                  }
+                },
+              ),
+              SizedBox(height: 24),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 70),
+                child: Divider(color: kPrimaryColor, thickness: 2),
+              ),
+              SizedBox(height: 24),
+              FutureBuilder(
+                future: links,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Text("Loading ..");
+                  } else if (snapshot.hasData) {
+                    return SizedBox(
+                      height: 90,
+                      child: ListView.separated(
+                        separatorBuilder: (context, index) =>
+                            SizedBox(width: 16),
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemCount: snapshot.data!.length + 1,
+                        itemBuilder: (context, index) {
+                          if (index == snapshot.data!.length) {
+                            return Container(
+                              padding: EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                color: kLightPrimaryColor,
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  IconButton(
+                                    onPressed: () {
+                                      Navigator.pushNamed(
+                                        context,
+                                        AddLinkView.id,
+                                      );
+                                    },
+                                    icon: Icon(Icons.add, color: kPrimaryColor),
+                                  ),
+                                  Text(
+                                    "Add Link",
+                                    style: TextStyle(
+                                      color: kPrimaryColor.withOpacity(0.7),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          } else if (index < snapshot.data!.length) {
+                            return Container(
+                              padding: EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                color: kLightSecondaryColor,
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Column(
+                                spacing: 12,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    snapshot.data![index].title.toUpperCase(),
+                                    style: TextStyle(
+                                      color: kOnSecondaryColor,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  Text(
+                                    "@${snapshot.data![index].username ?? "UserName"}",
+                                    style: TextStyle(
+                                      color: kOnSecondaryColor.withOpacity(0.7),
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          }
+                        },
+                      ),
+                    );
+                  } else {
+                    return Text("Error !!");
+                  }
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\links\add_link_view.dart =====
+import 'package:betweeener_app/controllers/link_controller.dart';
+import 'package:betweeener_app/views_features/widgets/custom_text_form_field.dart';
+import 'package:betweeener_app/views_features/widgets/secondary_button_widget.dart';
+import 'package:flutter/material.dart';
+
+class AddLinkView extends StatefulWidget {
+  static String id = "/addNewLink";
+  const AddLinkView({super.key});
+
+  @override
+  State<AddLinkView> createState() => _AddLinkViewState();
+}
+
+class _AddLinkViewState extends State<AddLinkView> {
+  final GlobalKey<FormState> _key = GlobalKey<FormState>();
+  final TextEditingController titleController = TextEditingController();
+  final TextEditingController linkController = TextEditingController();
+
+  void _addLink() {
+    if (_key.currentState!.validate()) {
+      final body = {'title': titleController.text, 'link': linkController.text};
+      addLink(context, body).then((value) => Navigator.pop(context)).catchError(
+        (error) {
+          print(error.toString());
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(error.toString())));
+        },
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Add Link"),
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: Icon(Icons.arrow_back_ios),
+        ),
+      ),
+      body: Padding(
+        padding: EdgeInsetsGeometry.all(24),
+        child: Form(
+          key: _key,
+          child: Column(
+            spacing: 16,
+            children: [
+              CustomTextFormField(
+                label: "Title",
+                hint: "Example",
+                controller: titleController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "title can't be empty";
+                  }
+                },
+              ),
+              CustomTextFormField(
+                label: "Link",
+                hint: "https://www.Example.com",
+                controller: linkController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "link can't be empty";
+                  }
+                },
+              ),
+              SizedBox(height: 8),
+              SecondaryButtonWidget(
+                onTap: _addLink,
+                text: "ADD",
+                width: MediaQuery.of(context).size.width / 3,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\links\edit_link_view.dart =====
+import 'package:betweeener_app/controllers/link_controller.dart';
+import 'package:betweeener_app/views_features/profile/profile_view.dart';
+import 'package:betweeener_app/views_features/widgets/custom_text_form_field.dart';
+import 'package:betweeener_app/views_features/widgets/secondary_button_widget.dart';
+import 'package:flutter/material.dart';
+
+class EditLinkView extends StatefulWidget {
+  static String id = "/editLink";
+  const EditLinkView({super.key});
+
+  @override
+  State<EditLinkView> createState() => _AddLinkViewState();
+}
+
+class _AddLinkViewState extends State<EditLinkView> {
+  final GlobalKey<FormState> _key = GlobalKey<FormState>();
+  final TextEditingController titleController = TextEditingController();
+  final TextEditingController linkController = TextEditingController();
+  late int idLink;
+
+  void _updateLink(int idLink) {
+    if (_key.currentState!.validate()) {
+      final body = {'title': titleController.text, 'link': linkController.text};
+
+      updateLink(context, body, idLink)
+          .then((value) {
+            Navigator.pop(context);
+          })
+          .catchError((error) {
+            ScaffoldMessenger.of(
+              context,
+            ).showSnackBar(SnackBar(content: Text(error.toString())));
+          });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final args =
+        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+
+    titleController.text = args['title']!;
+    linkController.text = args['link']!;
+    idLink = args['idLink']!;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Edit Link"),
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: Icon(Icons.arrow_back_ios),
+        ),
+      ),
+      body: Padding(
+        padding: EdgeInsetsGeometry.all(24),
+        child: Form(
+          key: _key,
+          child: Column(
+            spacing: 16,
+            children: [
+              CustomTextFormField(
+                label: "Title",
+                hint: "Example",
+                controller: titleController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "title can't be empty";
+                  }
+                },
+              ),
+              CustomTextFormField(
+                label: "Link",
+                hint: "https://www.Example.com",
+                controller: linkController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "link can't be empty";
+                  }
+                },
+              ),
+              SizedBox(height: 8),
+              SecondaryButtonWidget(
+                onTap: () => _updateLink(idLink),
+                text: "SAVE",
+                width: MediaQuery.of(context).size.width / 3,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\loading\loading_view.dart =====
+import 'package:betweeener_app/views_features/onboarding/onbording_view.dart';
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../auth/login_view.dart';
+import '../main_app_view.dart';
+
+class LoadingView extends StatefulWidget {
+  static const id = '/loadingView';
+  const LoadingView({super.key});
+
+  @override
+  State<LoadingView> createState() => _LoadingViewState();
+}
+
+class _LoadingViewState extends State<LoadingView> {
+  void checkLogin() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    if (!prefs.containsKey('isView')) {
+      Navigator.pushNamed(context, OnBoardingView.id);
+    } else {
+      if (prefs.containsKey('user') && mounted) {
+        Navigator.pushNamed(context, MainAppView.id);
+      } else {
+        Navigator.pushNamed(context, LoginView.id);
+      }
+    }
+  }
+
+  @override
+  void initState() {
+    checkLogin();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(child: CircularProgressIndicator());
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\onboarding\onbording_view.dart =====
+import 'package:betweeener_app/core/util/assets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../core/util/constants.dart';
+import '../auth/login_view.dart';
+import '../widgets/secondary_button_widget.dart';
+
+class OnBoardingView extends StatelessWidget {
+  static String id = '/onBoardingView';
+
+  const OnBoardingView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(32.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            const Spacer(),
+            SvgPicture.asset(AssetsData.onBoardingImage),
+            const Text(
+              'Just one Scan for everything',
+              style: TextStyle(
+                fontSize: 16,
+                color: kPrimaryColor,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const Spacer(),
+            SecondaryButtonWidget(
+              text: 'Get Started',
+              width: double.infinity,
+              onTap: () async {
+                SharedPreferences prefs = await SharedPreferences.getInstance();
+                prefs.setBool('isView', true);
+                Navigator.pushNamed(context, LoginView.id);
+              },
+            ),
+            const Spacer(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\profile\friend_profile_view.dart =====
+import 'package:betweeener_app/controllers/user_controller.dart';
+import 'package:betweeener_app/core/util/constants.dart';
+import 'package:betweeener_app/models/user.dart';
+import 'package:betweeener_app/views_features/widgets/link_card.dart';
+import 'package:flutter/material.dart';
+
+class FriendProfileView extends StatefulWidget {
+  static String id = "/friendProfileView";
+  const FriendProfileView({super.key});
+
+  @override
+  State<FriendProfileView> createState() => _FriendProfileViewState();
+}
+
+class _FriendProfileViewState extends State<FriendProfileView> {
+  bool isFollowing = false;
+  UserClass? userFriend;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (userFriend == null) {
+      userFriend = ModalRoute.of(context)!.settings.arguments as UserClass;
+      checkIfIsFollowing(userFriend!.id!)
+          .then((staus) {
+            if (mounted) {
+              setState(() {
+                isFollowing = staus;
+              });
+            }
+          })
+          .catchError((error) => print(error.toString()));
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // final UserClass userFriend =
+    //     ModalRoute.of(context)!.settings.arguments as UserClass;
+
+    if (userFriend == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(userFriend!.name!, style: TextStyle(color: kPrimaryColor)),
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: Icon(Icons.arrow_back_ios, color: kPrimaryColor),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          children: [
+            Card(
+              color: kPrimaryColor,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 20,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadiusGeometry.circular(100),
+                      child: Image.asset(
+                        "assets/imgs/profile.png",
+                        width: 85,
+                        height: 85,
+                      ),
+                    ),
+                    Column(
+                      spacing: 8,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          userFriend!.name!,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          userFriend!.email!,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () async {
+                            final body = {
+                              'followee_id': userFriend!.id!.toString(),
+                            };
+                            try {
+                              await followUser(body);
+                              if (mounted) {
+                                setState(() {
+                                  isFollowing = true;
+                                });
+                              }
+                            } catch (e) {
+                              print("Error: $e");
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text("Failed to follow user"),
+                                ),
+                              );
+                            }
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 4,
+                            ),
+                            decoration: BoxDecoration(
+                              color: isFollowing
+                                  ? kPrimaryColor
+                                  : kSecondaryColor,
+                              borderRadius: BorderRadius.circular(7),
+                            ),
+                            child: Text(
+                              isFollowing ? "Following" : "Follow",
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: isFollowing
+                                    ? kSecondaryColor
+                                    : kPrimaryColor,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 12),
+            Expanded(
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return LinkCard(
+                    isSlidable: false,
+                    title: "title",
+                    link: "https://Instagram.com",
+                    color: index.isOdd ? kLightDangerColor : kLightPrimaryColor,
+                    idLink: 9,
+                    onDelete: () {},
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\profile\profile_view.dart =====
+import 'package:betweeener_app/controllers/link_controller.dart';
+import 'package:betweeener_app/controllers/user_controller.dart';
+import 'package:betweeener_app/core/util/constants.dart';
+import 'package:betweeener_app/models/link_response_model.dart';
+import 'package:betweeener_app/models/user.dart';
+import 'package:betweeener_app/views_features/widgets/floating_action_btn.dart';
+import 'package:betweeener_app/views_features/widgets/link_card.dart';
+import 'package:flutter/material.dart';
+
+class ProfileView extends StatefulWidget {
+  static String id = '/profileView';
+
+  const ProfileView({super.key});
+
+  @override
+  State<ProfileView> createState() => _ProfileViewState();
+}
+
+class _ProfileViewState extends State<ProfileView> {
+  late Future<User> user;
+  late Future<List<LinkElement>> links;
+  late Future<Map<String, dynamic>> follows;
+
+  @override
+  void initState() {
+    user = getCurrentUser(context);
+    links = getUserLinks();
+    super.initState();
+    follows = getUserFollows();
+  }
+
+  void _deleteLink(int idLink) {
+    deleteLink(context, idLink)
+        .then((value) {
+          getUserLinks();
+        })
+        .catchError((error) {
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(error.toString())));
+        });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndDocked,
+      floatingActionButton: FloatingActionBtn(),
+      appBar: AppBar(
+        title: Text("Profile"),
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        automaticallyImplyLeading: false,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                Card(
+                  color: kPrimaryColor,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 24,
+                      vertical: 20,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadiusGeometry.circular(100),
+                          child: Image.asset(
+                            "assets/imgs/profile.png",
+                            width: 85,
+                            height: 85,
+                          ),
+                        ),
+                        FutureBuilder(
+                          future: user,
+                          builder: (context, snapshot) {
+                            if (snapshot.connectionState ==
+                                ConnectionState.waiting) {
+                              return Center(child: Text("Loading.."));
+                            } else if (snapshot.hasError) {
+                              return Center(child: Text("Error !!"));
+                            } else {
+                              return Column(
+                                spacing: 8,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    snapshot.data!.user!.name!,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                  Text(
+                                    snapshot.data!.user!.email!,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                  Text(
+                                    "+9700000000",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                  FutureBuilder(
+                                    future: follows,
+                                    builder: (context, snapshot) {
+                                      if (snapshot.connectionState ==
+                                          ConnectionState.waiting) {
+                                        return Text("Laoding..");
+                                      } else if (snapshot.hasError) {
+                                        return Text(snapshot.error.toString());
+                                      } else {
+                                        return Row(
+                                          spacing: 8,
+                                          children: [
+                                            Container(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 12,
+                                                vertical: 4,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                color: kSecondaryColor,
+                                                borderRadius:
+                                                    BorderRadius.circular(7),
+                                              ),
+                                              child: Text(
+                                                "followers ${snapshot.data!['followers_count']}",
+                                                style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: kPrimaryColor,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 12,
+                                                vertical: 4,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                color: kSecondaryColor,
+                                                borderRadius:
+                                                    BorderRadius.circular(7),
+                                              ),
+                                              child: Text(
+                                                "following ${snapshot.data!['following_count']}",
+                                                style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: kPrimaryColor,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        );
+                                      }
+                                    },
+                                  ),
+                                ],
+                              );
+                            }
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: 16,
+                  right: 16,
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.edit_outlined,
+                      color: Colors.white,
+                      size: 32,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 12),
+            FutureBuilder(
+              future: links,
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(child: CircularProgressIndicator());
+                } else if (snapshot.hasError) {
+                  return Center(child: Text(snapshot.error.toString()));
+                } else if (!snapshot.hasData) {
+                  return Center(child: Text("No Links found!"));
+                } else {
+                  return Expanded(
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: snapshot.data!.length,
+                      itemBuilder: (context, index) {
+                        return LinkCard(
+                          isSlidable: true,
+                          title: snapshot.data![index].title,
+                          link: snapshot.data![index].link,
+                          color: index.isOdd
+                              ? kLightDangerColor
+                              : kLightPrimaryColor,
+                          idLink: snapshot.data![index].id,
+                          onDelete: () {
+                            _deleteLink(snapshot.data![index].id);
+                          },
+                        );
+                      },
+                    ),
+                  );
+                }
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\recieve\receive_view.dart =====
+import 'package:betweeener_app/core/util/constants.dart';
+import 'package:betweeener_app/views_features/widgets/custom_sharing_tile.dart';
+import 'package:flutter/material.dart';
+
+class ReceiveView extends StatelessWidget {
+  static String id = '/receiveView';
+
+  const ReceiveView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+
+        title: Text("Active Sharing"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(32.0),
+        child: Column(
+          spacing: 32,
+          children: [
+            Center(
+              child: Icon(
+                Icons.emergency_share,
+                color: kLightPrimaryColor,
+                size: 200,
+              ),
+            ),
+            Expanded(
+              child: ListView.separated(
+                separatorBuilder: (context, index) => SizedBox(height: 12),
+                itemCount: 3,
+                itemBuilder: (context, index) => CustomSharingTile(),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\search\search_view.dart =====
+import 'package:betweeener_app/controllers/user_controller.dart';
+import 'package:betweeener_app/models/user.dart';
+import 'package:betweeener_app/views_features/profile/friend_profile_view.dart';
+import 'package:betweeener_app/views_features/widgets/custom_text_form_field.dart';
+import 'package:betweeener_app/views_features/widgets/result_search_card.dart';
+import 'package:betweeener_app/views_features/widgets/secondary_button_widget.dart';
+import 'package:flutter/material.dart';
+
+class SearchView extends StatefulWidget {
+  static String id = "/searchView";
+  const SearchView({super.key});
+
+  @override
+  State<SearchView> createState() => _SearchViewState();
+}
+
+class _SearchViewState extends State<SearchView> {
+  final TextEditingController searchController = TextEditingController();
+  Future<List<UserClass>>? searchUsers;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Search"),
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                spacing: 8,
+                children: [
+                  Expanded(
+                    flex: 4,
+                    child: CustomTextFormField(
+                      label: "Search By Name",
+                      controller: searchController,
+                      hint: "friend name ..",
+                      keyboardType: TextInputType.name,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please Write a valid Friend Name";
+                        }
+                      },
+                    ),
+                  ),
+                  Expanded(
+                    child: SizedBox(
+                      child: SecondaryButtonWidget(
+                        onTap: () {
+                          setState(() {
+                            searchUsers = searchUser(searchController.text);
+                          });
+                        },
+                        text: "search",
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 16),
+              searchUsers == null
+                  ? Center(child: Text("Search Friend By Name."))
+                  : FutureBuilder<List<UserClass>>(
+                      future: searchUsers,
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return Center(child: CircularProgressIndicator());
+                        } else if (snapshot.hasError) {
+                          return Center(child: Text(snapshot.error.toString()));
+                        } else if (!snapshot.hasData || snapshot.data == null) {
+                          return Center(child: Text("No Data Returned."));
+                        } else if (snapshot.data!.isEmpty) {
+                          return Center(
+                            child: Text("No User Found for this name"),
+                          );
+                        } else {
+                          return ListView.builder(
+                            physics: NeverScrollableScrollPhysics(),
+                            shrinkWrap: true,
+                            itemCount: snapshot.data!.length,
+                            itemBuilder: (context, index) {
+                              final UserClass friendUser =
+                                  snapshot.data![index];
+                              return ResultSearchCard(
+                                name: snapshot.data![index].name!,
+                                email: snapshot.data![index].email!,
+                                ontap: () {
+                                  Navigator.pushNamed(
+                                    context,
+                                    FriendProfileView.id,
+                                    arguments: friendUser,
+                                  );
+                                },
+                              );
+                            },
+                          );
+                        }
+                      },
+                    ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\widgets\custom_floating_nav_bar.dart =====
+import 'package:flutter/material.dart';
+
+import '../../core/util/constants.dart';
+
+class CustomFloatingNavBar extends StatelessWidget {
+  final int currentIndex;
+  final Function(int)? onTap;
+
+  const CustomFloatingNavBar(
+      {super.key, required this.currentIndex, this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 24.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(50),
+        child: BottomNavigationBar(
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          elevation: 0,
+          backgroundColor: kPrimaryColor,
+          selectedItemColor: Colors.white,
+          selectedIconTheme: const IconThemeData(size: 28),
+          unselectedItemColor: Colors.grey.shade300,
+          currentIndex: currentIndex,
+          onTap: onTap,
+          items: const [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.emergency_share), label: ''),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: '')
+          ],
+        ),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\widgets\custom_sharing_tile.dart =====
+import 'package:betweeener_app/core/util/constants.dart';
+import 'package:flutter/material.dart';
+
+class CustomSharingTile extends StatelessWidget {
+  const CustomSharingTile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadiusGeometry.circular(12),
+      ),
+      tileColor: kLightPrimaryColor,
+      contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+      leading: Icon(Icons.person, size: 40),
+      title: Text("AHMED ALI", style: TextStyle(fontSize: 18)),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\widgets\custom_text_form_field.dart =====
+import 'package:flutter/material.dart';
+import '../../core/util/styles.dart';
+
+class CustomTextFormField extends StatelessWidget {
+  final String label;
+  final String? hint;
+  final TextEditingController? controller;
+  final bool password;
+  final TextInputType? keyboardType;
+  final String? Function(String?)? validator;
+  final Iterable<String>? autofillHints;
+  const CustomTextFormField({
+    super.key,
+    required this.label,
+    this.controller,
+    this.hint,
+    this.password = false,
+    this.keyboardType,
+    this.validator,
+    this.autofillHints,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+   
+      Text(label, style: Styles.textStyle14),
+        const SizedBox(height: 12),
+        TextFormField(
+          keyboardType: keyboardType,
+          controller: controller,
+          validator: validator,
+          autofillHints: autofillHints,
+          obscureText: password,
+          enableSuggestions: password == true ? false : true,
+          autocorrect: password == true ? false : true,
+          decoration: InputDecoration(
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 12,
+              vertical: 12,
+            ),
+            hintText: hint,
+            border: Styles.primaryRoundedOutlineInputBorder,
+            focusedBorder: Styles.primaryRoundedOutlineInputBorder,
+            errorBorder: Styles.primaryRoundedOutlineInputBorder,
+            enabledBorder: Styles.primaryRoundedOutlineInputBorder,
+            disabledBorder: Styles.primaryRoundedOutlineInputBorder,
+          ),
+        ),
+      ],
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\widgets\floating_action_btn.dart =====
+import 'package:betweeener_app/core/util/constants.dart';
+import 'package:betweeener_app/views_features/links/add_link_view.dart';
+import 'package:flutter/material.dart';
+
+class FloatingActionBtn extends StatelessWidget {
+  const FloatingActionBtn({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(bottom: 120),
+      child: FloatingActionButton(
+        backgroundColor: kPrimaryColor,
+        foregroundColor: Colors.white,
+        elevation: 0,
+        shape: CircleBorder(),
+        onPressed: () {
+          Navigator.pushNamed(context, AddLinkView.id);
+        },
+        child: Icon(Icons.add, size: 40),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\widgets\google_button_widget.dart =====
+import 'package:flutter/material.dart';
+
+import '../../core/util/constants.dart';
+
+class GoogleButtonWidget extends StatelessWidget {
+  final Function()? onTap;
+  final double? width;
+
+  const GoogleButtonWidget({
+    super.key,
+    required this.onTap,
+    this.width = double.infinity,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+          side: const BorderSide(color: kRedColor, width: 2)),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: SizedBox(
+          width: width,
+          height: 50,
+          child: const Padding(
+            padding: EdgeInsets.all(12.0),
+            child: Row(
+              children: [
+                // Icon(
+                //   FontAwesomeIcons.google,
+                //   color: kRedColor,
+                // ),
+                Spacer(),
+                Text(
+                  'SIGN IN WITH GOOGLE',
+                  style: TextStyle(
+                      color: kRedColor,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500),
+                ),
+                Spacer(),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\widgets\link_card.dart =====
+import 'package:betweeener_app/core/util/constants.dart';
+import 'package:betweeener_app/views_features/links/edit_link_view.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+
+class LinkCard extends StatelessWidget {
+  final String title;
+  final String link;
+  final Color color;
+  final int idLink;
+  final Function()? onDelete;
+  final bool isSlidable;
+  const LinkCard({
+    super.key,
+    required this.title,
+    required this.link,
+    required this.color,
+    required this.idLink,
+    this.onDelete,
+    required this.isSlidable,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return isSlidable
+        ? Slidable(
+            endActionPane: ActionPane(
+              motion: const ScrollMotion(),
+              extentRatio: 0.4,
+              children: [
+                Padding(
+                  padding: EdgeInsetsGeometry.symmetric(horizontal: 4),
+                  child: Container(
+                    width: 60,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: kSecondaryColor,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: IconButton(
+                      onPressed: () => Navigator.pushNamed(
+                        context,
+                        EditLinkView.id,
+                        arguments: {
+                          'title': title,
+                          'link': link,
+                          'idLink': idLink,
+                        },
+                      ),
+                      icon: Icon(Icons.edit, color: Colors.white, size: 28),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsGeometry.symmetric(horizontal: 4),
+                  child: Container(
+                    width: 60,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: kDangerColor,
+                    ),
+                    child: IconButton(
+                      onPressed: onDelete,
+                      icon: Icon(Icons.delete, color: Colors.white, size: 28),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            child: Container(
+              margin: const EdgeInsets.symmetric(vertical: 12),
+              width: double.infinity,
+              height: 60,
+              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title.toUpperCase(),
+                    style: TextStyle(
+                      fontSize: 14,
+                      letterSpacing: 2,
+                      color: color == kLightPrimaryColor
+                          ? kPrimaryColor
+                          : kRedColor,
+                    ),
+                  ),
+                  Text(
+                    link,
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: color == kLightPrimaryColor
+                          ? kPrimaryColor.withOpacity(0.5)
+                          : kRedColor.withOpacity(0.5),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
+        : Container(
+            margin: const EdgeInsets.symmetric(vertical: 12),
+            width: double.infinity,
+            height: 60,
+            padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title.toUpperCase(),
+                  style: TextStyle(
+                    fontSize: 14,
+                    letterSpacing: 2,
+                    color: color == kLightPrimaryColor
+                        ? kPrimaryColor
+                        : kRedColor,
+                  ),
+                ),
+                Text(
+                  link,
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: color == kLightPrimaryColor
+                        ? kPrimaryColor.withOpacity(0.5)
+                        : kRedColor.withOpacity(0.5),
+                  ),
+                ),
+              ],
+            ),
+          );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\widgets\primary_outlined_button_widget.dart =====
+import 'package:flutter/material.dart';
+
+import '../../core/util/constants.dart';
+
+class PrimaryOutlinedButtonWidget extends StatelessWidget {
+  final Function()? onTap;
+  final double? width;
+  final String text;
+
+  const PrimaryOutlinedButtonWidget(
+      {super.key,
+      required this.onTap,
+      this.width = double.infinity,
+      required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+          side: const BorderSide(color: kPrimaryColor, width: 2)),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: SizedBox(
+          width: width,
+          height: 50,
+          child: Center(
+            child: Text(
+              text,
+              style: const TextStyle(
+                  color: kPrimaryColor,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\widgets\result_search_card.dart =====
+import 'package:betweeener_app/core/util/constants.dart';
+import 'package:flutter/material.dart';
+
+class ResultSearchCard extends StatelessWidget {
+  final String name;
+  final String email;
+  final Function()? ontap;
+  const ResultSearchCard({super.key, required this.name, required this.email, required this.ontap});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: ontap,
+      child: Card(
+        margin: const EdgeInsets.symmetric(vertical: 6),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        color: kLightSecondaryColor,
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Row(
+            children: [
+              CircleAvatar(
+                radius: 24,
+                backgroundColor: kPrimaryColor,
+                child: Text(
+                  name[0].toUpperCase(),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+              SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      name,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: kPrimaryColor,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      email,
+                      style: TextStyle(fontSize: 14, color: Colors.grey[700]),
+                    ),
+                  ],
+                ),
+              ),
+              Icon(Icons.arrow_forward_ios, color: kRedColor, size: 18),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\widgets\secondary_button_widget.dart =====
+import 'package:flutter/material.dart';
+
+import '../../core/util/constants.dart';
+
+class SecondaryButtonWidget extends StatelessWidget {
+  final Function()? onTap;
+  final double? width;
+  final String text;
+
+  const SecondaryButtonWidget(
+      {super.key,
+      required this.onTap,
+      this.width = double.infinity,
+      required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      borderRadius: BorderRadius.circular(12),
+      color: kSecondaryColor,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: SizedBox(
+          width: width,
+          height: 50,
+          child: Center(
+            child: Text(
+              text,
+              style: const TextStyle(
+                  color: kOnSecondaryColor,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\macos\Runner\Assets.xcassets\AppIcon.appiconset\Contents.json =====
+{
+  "images" : [
+    {
+      "size" : "16x16",
+      "idiom" : "mac",
+      "filename" : "app_icon_16.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "16x16",
+      "idiom" : "mac",
+      "filename" : "app_icon_32.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "32x32",
+      "idiom" : "mac",
+      "filename" : "app_icon_32.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "32x32",
+      "idiom" : "mac",
+      "filename" : "app_icon_64.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "128x128",
+      "idiom" : "mac",
+      "filename" : "app_icon_128.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "128x128",
+      "idiom" : "mac",
+      "filename" : "app_icon_256.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "256x256",
+      "idiom" : "mac",
+      "filename" : "app_icon_256.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "256x256",
+      "idiom" : "mac",
+      "filename" : "app_icon_512.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "512x512",
+      "idiom" : "mac",
+      "filename" : "app_icon_512.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "512x512",
+      "idiom" : "mac",
+      "filename" : "app_icon_1024.png",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\test\widget_test.dart =====
+// This is a basic Flutter widget test.
+//
+// To perform an interaction with a widget in your test, use the WidgetTester
+// utility in the flutter_test package. For example, you can send tap and scroll
+// gestures. You can also use WidgetTester to find child widgets in the widget
+// tree, read text, and verify that the values of widget properties are correct.
+
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+import 'package:betweeener_app/main.dart';
+
+void main() {
+  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const MyApp());
+
+    // Verify that our counter starts at 0.
+    expect(find.text('0'), findsOneWidget);
+    expect(find.text('1'), findsNothing);
+
+    // Tap the '+' icon and trigger a frame.
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
+
+    // Verify that our counter has incremented.
+    expect(find.text('0'), findsNothing);
+    expect(find.text('1'), findsOneWidget);
+  });
+}
+===== D:\Android\kick_lance_project\betweener_app\web\manifest.json =====
+{
+    "name": "betweeener_app",
+    "short_name": "betweeener_app",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0175C2",
+    "theme_color": "#0175C2",
+    "description": "A new Flutter project.",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
