@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
-// endpoints==================
-const baseUrl = 'https://betweener.gsgtt.tech/api';
+// ============= END POINTS ==============
+
+const baseUrl = 'https://betweener.kicklance.com/api';
 const loginUrl = '$baseUrl/login';
+const registerUrl = '$baseUrl/register';
 const linksUrl = '$baseUrl/links';
+const followUrl = '$baseUrl/follow';
+const searchUrl = '$baseUrl/search';
 
 // ============= STYLE CONSTS ==============
 

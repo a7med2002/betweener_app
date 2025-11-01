@@ -1,6 +1,7 @@
 import 'package:betweeener_app/core/util/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/util/constants.dart';
 import '../auth/login_view.dart';
@@ -33,7 +34,9 @@ class OnBoardingView extends StatelessWidget {
             SecondaryButtonWidget(
               text: 'Get Started',
               width: double.infinity,
-              onTap: () {
+              onTap: () async {
+                SharedPreferences prefs = await SharedPreferences.getInstance();
+                prefs.setBool('isView', true);
                 Navigator.pushNamed(context, LoginView.id);
               },
             ),

@@ -1,8 +1,11 @@
+import 'package:betweeener_app/controllers/link_controller.dart';
 import 'package:betweeener_app/controllers/user_controller.dart';
-import 'package:betweeener_app/core/helpers/api_response.dart';
-import 'package:betweeener_app/providers/link_provider.dart';
+import 'package:betweeener_app/views_features/auth/login_view.dart';
+import 'package:betweeener_app/views_features/links/add_link_view.dart';
+import 'package:betweeener_app/views_features/search/search_view.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:qr_flutter/qr_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/util/constants.dart';
 import '../../models/link_response_model.dart';
@@ -18,102 +21,183 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   late Future<User> user;
-  late Future<List<Link>> links;
+  late Future<List<LinkElement>> links;
 
   @override
   void initState() {
-    user = getLocalUser();
-    // links = getLinks(context);
+    user = getCurrentUser(context);
+    links = getUserLinks();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        FutureBuilder(
-          future: user,
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return Text('Welcome ${snapshot.data?.user?.name}');
-            }
-            return Text('loading');
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () async {
+            SharedPreferences prefs = await SharedPreferences.getInstance();
+            await prefs.remove('user');
+            Navigator.pushReplacementNamed(context, LoginView.id);
           },
+          icon: Icon(Icons.logout_rounded, color: Colors.red),
         ),
-        Consumer<LinkProvider>(
-          builder: (_, linkProvider, __) {
-            if (linkProvider.links.status == Status.LOADING) {
-              return Center(child: CircularProgressIndicator());
-            }
-            if (linkProvider.links.status == Status.COMPLETED) {
-              return SizedBox(
-                height: 80,
-                child: ListView.separated(
-                  padding: EdgeInsets.all(12),
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    final link = linkProvider.links.data?[index].title;
-                    return Container(
-                      padding: EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: kLinksColor,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Text(
-                        '$link',
-                        style: TextStyle(color: Colors.white),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, SearchView.id);
+            },
+            icon: Icon(Icons.search),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.qr_code_scanner_outlined),
+          ),
+        ],
+        elevation: 0,
+        surfaceTintColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
+        automaticallyImplyLeading: false,
+      ),
+      body: RefreshIndicator(
+        onRefresh: () async => await getUserLinks(),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: ListView(
+            children: [
+              FutureBuilder(
+                future: user,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Text("Loading ..");
+                  } else if (snapshot.hasData) {
+                    return Text(
+                      "Hello, ${snapshot.data!.user!.name} !",
+                      style: TextStyle(
+                        color: kPrimaryColor,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
                       ),
                     );
-                  },
-                  separatorBuilder: (context, index) {
-                    return SizedBox(width: 8);
-                  },
-                  itemCount: linkProvider.links.data?.length ?? 0,
-                ),
-              );
-            }
-
-            return Text('${linkProvider.links.message}');
-          },
+                  } else {
+                    return Text("Error !!");
+                  }
+                },
+              ),
+              SizedBox(height: 24),
+              FutureBuilder(
+                future: user,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Center(child: CircularProgressIndicator());
+                  } else {
+                    return Center(
+                      child: QrImageView(
+                        data: snapshot.data!.token!,
+                        foregroundColor: kPrimaryColor,
+                        version: QrVersions.auto,
+                        backgroundColor: Colors.transparent,
+                        size: 300,
+                      ),
+                    );
+                  }
+                },
+              ),
+              SizedBox(height: 24),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 70),
+                child: Divider(color: kPrimaryColor, thickness: 2),
+              ),
+              SizedBox(height: 24),
+              FutureBuilder(
+                future: links,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Text("Loading ..");
+                  } else if (snapshot.hasData) {
+                    return SizedBox(
+                      height: 90,
+                      child: ListView.separated(
+                        separatorBuilder: (context, index) =>
+                            SizedBox(width: 16),
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemCount: snapshot.data!.length + 1,
+                        itemBuilder: (context, index) {
+                          if (index == snapshot.data!.length) {
+                            return Container(
+                              padding: EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                color: kLightPrimaryColor,
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  IconButton(
+                                    onPressed: () {
+                                      Navigator.pushNamed(
+                                        context,
+                                        AddLinkView.id,
+                                      );
+                                    },
+                                    icon: Icon(Icons.add, color: kPrimaryColor),
+                                  ),
+                                  Text(
+                                    "Add Link",
+                                    style: TextStyle(
+                                      color: kPrimaryColor.withOpacity(0.7),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          } else if (index < snapshot.data!.length) {
+                            return Container(
+                              padding: EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                color: kLightSecondaryColor,
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Column(
+                                spacing: 12,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    snapshot.data![index].title.toUpperCase(),
+                                    style: TextStyle(
+                                      color: kOnSecondaryColor,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  Text(
+                                    "@${snapshot.data![index].username ?? "UserName"}",
+                                    style: TextStyle(
+                                      color: kOnSecondaryColor.withOpacity(0.7),
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          }
+                        },
+                      ),
+                    );
+                  } else {
+                    return Text("Error !!");
+                  }
+                },
+              ),
+            ],
+          ),
         ),
-        // FutureBuilder(
-        //   future: links,
-        //   builder: (context, snapshot) {
-        //     if (snapshot.hasData) {
-        //       return SizedBox(
-        //         height: 80,
-        //         child: ListView.separated(
-        //             padding: EdgeInsets.all(12),
-        //             scrollDirection: Axis.horizontal,
-        //             itemBuilder: (context, index) {
-        //               final link = snapshot.data?[index].title;
-        //               return Container(
-        //                 padding: EdgeInsets.all(12),
-        //                 decoration: BoxDecoration(
-        //                     color: kLinksColor,
-        //                     borderRadius: BorderRadius.circular(15)),
-        //                 child: Text(
-        //                   '$link',
-        //                   style: TextStyle(color: Colors.white),
-        //                 ),
-        //               );
-        //             },
-        //             separatorBuilder: (context, index) {
-        //               return SizedBox(
-        //                 width: 8,
-        //               );
-        //             },
-        //             itemCount: snapshot.data!.length),
-        //       );
-        //     }
-        //     if (snapshot.hasError) {
-        //       return Text(snapshot.error.toString());
-        //     }
-        //     return Text('loading');
-        //   },
-        // ),
-      ],
+      ),
     );
   }
 }

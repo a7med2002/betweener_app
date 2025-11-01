@@ -1,3 +1,4 @@
+import 'package:betweeener_app/views_features/onboarding/onbording_view.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -15,11 +16,15 @@ class LoadingView extends StatefulWidget {
 class _LoadingViewState extends State<LoadingView> {
   void checkLogin() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    if (prefs.containsKey('user') && mounted) {
-      print('navigate to main');
-      Navigator.pushNamed(context, MainAppView.id);
+
+    if (!prefs.containsKey('isView')) {
+      Navigator.pushNamed(context, OnBoardingView.id);
     } else {
-      Navigator.pushNamed(context, LoginView.id);
+      if (prefs.containsKey('user') && mounted) {
+        Navigator.pushNamed(context, MainAppView.id);
+      } else {
+        Navigator.pushNamed(context, LoginView.id);
+      }
     }
   }
 
@@ -31,8 +36,6 @@ class _LoadingViewState extends State<LoadingView> {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: CircularProgressIndicator(),
-    );
+    return const Center(child: CircularProgressIndicator());
   }
 }

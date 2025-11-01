@@ -1,67 +1,69 @@
-class LinkResponseModel {
-  List<Link>? links;
+// To parse this JSON data, do
+//
+//     final link = linkFromJson(jsonString);
 
-  LinkResponseModel({this.links});
+import 'dart:convert';
 
-  LinkResponseModel.fromJson(Map<String, dynamic> json) {
-    if (json['links'] != null) {
-      links = <Link>[];
-      json['links'].forEach((v) {
-        links!.add(new Link.fromJson(v));
-      });
-    }
-  }
+Link linkFromJson(String str) => Link.fromJson(json.decode(str));
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.links != null) {
-      data['links'] = this.links!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
-}
+String linkToJson(Link data) => json.encode(data.toJson());
 
 class Link {
-  int? id;
-  String? title;
-  String? link;
-  String? username;
-  String? isActive;
-  String? userId;
-  String? createdAt;
-  String? updatedAt;
+    List<LinkElement> links;
 
-  Link(
-      {this.id,
-      this.title,
-      this.link,
-      this.username,
-      this.isActive,
-      this.userId,
-      this.createdAt,
-      this.updatedAt});
+    Link({
+        required this.links,
+    });
 
-  Link.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    title = json['title'];
-    link = json['link'];
-    username = json['username'];
-    isActive = json['isActive'];
-    userId = json['user_id'];
-    createdAt = json['created_at'];
-    updatedAt = json['updated_at'];
-  }
+    factory Link.fromJson(Map<String, dynamic> json) => Link(
+        links: List<LinkElement>.from(json["links"].map((x) => LinkElement.fromJson(x))),
+    );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['title'] = this.title;
-    data['link'] = this.link;
-    data['username'] = this.username;
-    data['isActive'] = this.isActive;
-    data['user_id'] = this.userId;
-    data['created_at'] = this.createdAt;
-    data['updated_at'] = this.updatedAt;
-    return data;
-  }
+    Map<String, dynamic> toJson() => {
+        "links": List<dynamic>.from(links.map((x) => x.toJson())),
+    };
+}
+
+class LinkElement {
+    int id;
+    String title;
+    String link;
+    String? username;
+    int isActive;
+    int userId;
+    DateTime createdAt;
+    DateTime updatedAt;
+
+    LinkElement({
+        required this.id,
+        required this.title,
+        required this.link,
+        required this.username,
+        required this.isActive,
+        required this.userId,
+        required this.createdAt,
+        required this.updatedAt,
+    });
+
+    factory LinkElement.fromJson(Map<String, dynamic> json) => LinkElement(
+        id: json["id"],
+        title: json["title"],
+        link: json["link"],
+        username: json["username"],
+        isActive: json["isActive"],
+        userId: json["user_id"],
+        createdAt: DateTime.parse(json["created_at"]),
+        updatedAt: DateTime.parse(json["updated_at"]),
+    );
+
+    Map<String, dynamic> toJson() => {
+        "id": id,
+        "title": title,
+        "link": link,
+        "username": username,
+        "isActive": isActive,
+        "user_id": userId,
+        "created_at": createdAt.toIso8601String(),
+        "updated_at": updatedAt.toIso8601String(),
+    };
 }

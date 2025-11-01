@@ -24,8 +24,8 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   void submitLogin() {
@@ -37,19 +37,18 @@ class _LoginViewState extends State<LoginView> {
 
       login(body)
           .then((user) async {
-            //save user locally
             final SharedPreferences prefs =
                 await SharedPreferences.getInstance();
             await prefs.setString('user', userToJson(user));
 
             if (mounted) {
-              Navigator.pushNamed(context, MainAppView.id);
+              Navigator.pushReplacementNamed(context, MainAppView.id);
             }
           })
-          .catchError((err) {
+          .catchError((error) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text(err.toString()),
+                content: Text(error.toString()),
                 backgroundColor: Colors.red,
               ),
             );
