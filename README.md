@@ -62,9 +62,14 @@ The project follows a **modular and scalable architecture** ensuring clarity and
 - flutter run
 
 ## 🖼️ Screenshots
-<!-- ![app_view1](assets/images/app_view1.png)
 
-![app_view1](assets/images/app_view2.png) -->
+![app_view1](assets/imgs/view1.png)
+
+![app_view2](assets/imgs/view2.png)
+
+![app_view3](assets/imgs/view3.png)
+
+![app_view4](assets/imgs/view4.png)
 
 ## 🌐 Social Links
 - 👨‍💻 Developer: [ِAhmed Meqdad]
