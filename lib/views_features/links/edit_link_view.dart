@@ -1,38 +1,20 @@
-import 'package:betweeener_app/controllers/link_controller.dart';
-import 'package:betweeener_app/views_features/profile/profile_view.dart';
+import 'package:betweeener_app/providers/link_provider.dart';
 import 'package:betweeener_app/views_features/widgets/custom_text_form_field.dart';
 import 'package:betweeener_app/views_features/widgets/secondary_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class EditLinkView extends StatefulWidget {
+class EditLinkView extends StatelessWidget {
   static String id = "/editLink";
-  const EditLinkView({super.key});
+  EditLinkView({super.key});
 
-  @override
-  State<EditLinkView> createState() => _AddLinkViewState();
-}
-
-class _AddLinkViewState extends State<EditLinkView> {
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
+
   final TextEditingController titleController = TextEditingController();
+
   final TextEditingController linkController = TextEditingController();
+
   late int idLink;
-
-  void _updateLink(int idLink) {
-    if (_key.currentState!.validate()) {
-      final body = {'title': titleController.text, 'link': linkController.text};
-
-      updateLink(context, body, idLink)
-          .then((value) {
-            Navigator.pop(context);
-          })
-          .catchError((error) {
-            ScaffoldMessenger.of(
-              context,
-            ).showSnackBar(SnackBar(content: Text(error.toString())));
-          });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +62,23 @@ class _AddLinkViewState extends State<EditLinkView> {
               ),
               SizedBox(height: 8),
               SecondaryButtonWidget(
-                onTap: () => _updateLink(idLink),
+                onTap: () async {
+                  if (_key.currentState!.validate()) {
+                    final body = {
+                      'title': titleController.text,
+                      'link': linkController.text,
+                    };
+                    try {
+                      await Provider.of<LinkProvider>(
+                        context,
+                        listen: false,
+                      ).updateLinkList(body, idLink);
+                      Navigator.pop(context);
+                    } catch (e) {
+                      print("Error: ${e.toString()}");
+                    }
+                  }
+                },
                 text: "SAVE",
                 width: MediaQuery.of(context).size.width / 3,
               ),

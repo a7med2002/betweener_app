@@ -1,34 +1,18 @@
-import 'package:betweeener_app/controllers/link_controller.dart';
+import 'package:betweeener_app/providers/link_provider.dart';
 import 'package:betweeener_app/views_features/widgets/custom_text_form_field.dart';
 import 'package:betweeener_app/views_features/widgets/secondary_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class AddLinkView extends StatefulWidget {
+class AddLinkView extends StatelessWidget {
   static String id = "/addNewLink";
-  const AddLinkView({super.key});
+   AddLinkView({super.key});
 
-  @override
-  State<AddLinkView> createState() => _AddLinkViewState();
-}
-
-class _AddLinkViewState extends State<AddLinkView> {
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
-  final TextEditingController titleController = TextEditingController();
-  final TextEditingController linkController = TextEditingController();
 
-  void _addLink() {
-    if (_key.currentState!.validate()) {
-      final body = {'title': titleController.text, 'link': linkController.text};
-      addLink(context, body).then((value) => Navigator.pop(context)).catchError(
-        (error) {
-          print(error.toString());
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(error.toString())));
-        },
-      );
-    }
-  }
+  final TextEditingController titleController = TextEditingController();
+
+  final TextEditingController linkController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +53,19 @@ class _AddLinkViewState extends State<AddLinkView> {
               ),
               SizedBox(height: 8),
               SecondaryButtonWidget(
-                onTap: _addLink,
+                onTap: () async {
+                  if (_key.currentState!.validate()) {
+                    final body = {
+                      'title': titleController.text,
+                      'link': linkController.text,
+                    };
+                    await Provider.of<LinkProvider>(
+                      context,
+                      listen: false,
+                    ).addLinkToList(body);
+                    Navigator.pop(context);
+                  }
+                },
                 text: "ADD",
                 width: MediaQuery.of(context).size.width / 3,
               ),

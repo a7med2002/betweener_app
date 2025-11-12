@@ -1,22 +1,19 @@
-import 'package:betweeener_app/controllers/user_controller.dart';
+import 'package:betweeener_app/core/helpers/api_response.dart';
 import 'package:betweeener_app/models/user.dart';
+import 'package:betweeener_app/providers/user_provider.dart';
 import 'package:betweeener_app/views_features/profile/friend_profile_view.dart';
 import 'package:betweeener_app/views_features/widgets/custom_text_form_field.dart';
 import 'package:betweeener_app/views_features/widgets/result_search_card.dart';
 import 'package:betweeener_app/views_features/widgets/secondary_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class SearchView extends StatefulWidget {
+class SearchView extends StatelessWidget {
   static String id = "/searchView";
-  const SearchView({super.key});
+   SearchView({super.key});
 
-  @override
-  State<SearchView> createState() => _SearchViewState();
-}
-
-class _SearchViewState extends State<SearchView> {
   final TextEditingController searchController = TextEditingController();
-  Future<List<UserClass>>? searchUsers;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,9 +50,10 @@ class _SearchViewState extends State<SearchView> {
                     child: SizedBox(
                       child: SecondaryButtonWidget(
                         onTap: () {
-                          setState(() {
-                            searchUsers = searchUser(searchController.text);
-                          });
+                          Provider.of<UserProvider>(
+                            context,
+                            listen: false,
+                          ).searchUser(searchController.text);
                         },
                         text: "search",
                       ),
@@ -64,46 +62,77 @@ class _SearchViewState extends State<SearchView> {
                 ],
               ),
               SizedBox(height: 16),
-              searchUsers == null
+              Provider.of<UserProvider>(context, listen: false).usersList ==
+                      null
                   ? Center(child: Text("Search Friend By Name."))
-                  : FutureBuilder<List<UserClass>>(
-                      future: searchUsers,
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState ==
-                            ConnectionState.waiting) {
+                  : Consumer<UserProvider>(
+                      builder: (_, userProvider, _) {
+                        if (userProvider.usersList.status == Status.LOADING) {
                           return Center(child: CircularProgressIndicator());
-                        } else if (snapshot.hasError) {
-                          return Center(child: Text(snapshot.error.toString()));
-                        } else if (!snapshot.hasData || snapshot.data == null) {
-                          return Center(child: Text("No Data Returned."));
-                        } else if (snapshot.data!.isEmpty) {
-                          return Center(
-                            child: Text("No User Found for this name"),
-                          );
-                        } else {
-                          return ListView.builder(
-                            physics: NeverScrollableScrollPhysics(),
-                            shrinkWrap: true,
-                            itemCount: snapshot.data!.length,
-                            itemBuilder: (context, index) {
-                              final UserClass friendUser =
-                                  snapshot.data![index];
-                              return ResultSearchCard(
-                                name: snapshot.data![index].name!,
-                                email: snapshot.data![index].email!,
-                                ontap: () {
-                                  Navigator.pushNamed(
-                                    context,
-                                    FriendProfileView.id,
-                                    arguments: friendUser,
-                                  );
-                                },
-                              );
-                            },
-                          );
+                        } else if (userProvider.usersList.status ==
+                            Status.ERROR) {
+                          return Text("${userProvider.usersList.message}");
                         }
+                        return ListView.builder(
+                          physics: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: userProvider.usersList.data!.length,
+                          itemBuilder: (context, index) {
+                            final UserClass friendUser =
+                                userProvider.usersList.data![index];
+                            return ResultSearchCard(
+                              name: userProvider.usersList.data![index].name!,
+                              email: userProvider.usersList.data![index].email!,
+                              ontap: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  FriendProfileView.id,
+                                  arguments: friendUser,
+                                );
+                              },
+                            );
+                          },
+                        );
                       },
                     ),
+              // FutureBuilder<List<UserClass>>(
+              //     future: searchUsers,
+              //     builder: (context, snapshot) {
+              //       if (snapshot.connectionState ==
+              //           ConnectionState.waiting) {
+              //         return Center(child: CircularProgressIndicator());
+              //       } else if (snapshot.hasError) {
+              //         return Center(child: Text(snapshot.error.toString()));
+              //       } else if (!snapshot.hasData || snapshot.data == null) {
+              //         return Center(child: Text("No Data Returned."));
+              //       } else if (snapshot.data!.isEmpty) {
+              //         return Center(
+              //           child: Text("No User Found for this name"),
+              //         );
+              //       } else {
+              //         return ListView.builder(
+              //           physics: NeverScrollableScrollPhysics(),
+              //           shrinkWrap: true,
+              //           itemCount: snapshot.data!.length,
+              //           itemBuilder: (context, index) {
+              //             final UserClass friendUser =
+              //                 snapshot.data![index];
+              //             return ResultSearchCard(
+              //               name: snapshot.data![index].name!,
+              //               email: snapshot.data![index].email!,
+              //               ontap: () {
+              //                 Navigator.pushNamed(
+              //                   context,
+              //                   FriendProfileView.id,
+              //                   arguments: friendUser,
+              //                 );
+              //               },
+              //             );
+              //           },
+              //         );
+              //       }
+              //     },
+              //   ),
             ],
           ),
         ),

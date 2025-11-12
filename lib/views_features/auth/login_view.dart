@@ -1,65 +1,64 @@
+import 'package:betweeener_app/core/helpers/api_response.dart';
 import 'package:betweeener_app/core/util/assets.dart';
 import 'package:betweeener_app/models/user.dart';
+import 'package:betweeener_app/providers/user_provider.dart';
 import 'package:betweeener_app/views_features/auth/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:provider/provider.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../controllers/auth_controller.dart';
 import '../main_app_view.dart';
 import '../widgets/custom_text_form_field.dart';
 import '../widgets/google_button_widget.dart';
 import '../widgets/primary_outlined_button_widget.dart';
 import '../widgets/secondary_button_widget.dart';
 
-class LoginView extends StatefulWidget {
+class LoginView extends StatelessWidget {
   static String id = '/loginView';
 
-  const LoginView({super.key});
-
-  @override
-  State<LoginView> createState() => _LoginViewState();
-}
-
-class _LoginViewState extends State<LoginView> {
+  LoginView({super.key});
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
   final _formKey = GlobalKey<FormState>();
-
-  void submitLogin() {
-    if (_formKey.currentState!.validate()) {
-      final body = {
-        'email': emailController.text,
-        'password': passwordController.text,
-      };
-
-      login(body)
-          .then((user) async {
-            final SharedPreferences prefs =
-                await SharedPreferences.getInstance();
-            await prefs.setString('user', userToJson(user));
-
-            if (mounted) {
-              Navigator.pushReplacementNamed(context, MainAppView.id);
-            }
-          })
-          .catchError((error) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(error.toString()),
-                backgroundColor: Colors.red,
-              ),
-            );
-          });
-
-      // Navigator.pushNamed(context, MainAppView.id);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
+    void submitLogin() async {
+      if (_formKey.currentState!.validate()) {
+        final body = {
+          'email': emailController.text,
+          'password': passwordController.text,
+        };
+
+        final userProvider = Provider.of<UserProvider>(context, listen: false);
+        await userProvider.login(body);
+
+        final userResponse = userProvider.user;
+
+        if (userResponse.status == Status.COMPLETED &&
+            userResponse.data != null) {
+          final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+          await prefs.setString('user', userToJson(userResponse.data!));
+
+          userProvider.setUser(userResponse.data!);
+
+          Navigator.pushReplacementNamed(context, MainAppView.id);
+        } else if (userResponse.status == Status.ERROR) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(userResponse.message.toString()),
+              backgroundColor: Colors.red,
+            ),
+          );
+        }
+      }
+    }
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(

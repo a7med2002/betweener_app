@@ -1,8 +1,9 @@
-import 'package:betweeener_app/controllers/user_controller.dart';
 import 'package:betweeener_app/core/util/constants.dart';
 import 'package:betweeener_app/models/user.dart';
+import 'package:betweeener_app/providers/user_provider.dart';
 import 'package:betweeener_app/views_features/widgets/link_card.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class FriendProfileView extends StatefulWidget {
   static String id = "/friendProfileView";
@@ -13,7 +14,6 @@ class FriendProfileView extends StatefulWidget {
 }
 
 class _FriendProfileViewState extends State<FriendProfileView> {
-  bool isFollowing = false;
   UserClass? userFriend;
 
   @override
@@ -21,23 +21,20 @@ class _FriendProfileViewState extends State<FriendProfileView> {
     super.didChangeDependencies();
     if (userFriend == null) {
       userFriend = ModalRoute.of(context)!.settings.arguments as UserClass;
-      checkIfIsFollowing(userFriend!.id!)
-          .then((staus) {
-            if (mounted) {
-              setState(() {
-                isFollowing = staus;
-              });
-            }
-          })
-          .catchError((error) => print(error.toString()));
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        Provider.of<UserProvider>(
+          context,
+          listen: false,
+        ).checkIfIsFollowing(userFriend!.id!);
+      });
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    // final UserClass userFriend =
-    //     ModalRoute.of(context)!.settings.arguments as UserClass;
-
+    final bool isFollowing =
+        Provider.of<UserProvider>(context, listen: false).isFollowing.data ??
+        false;
     if (userFriend == null) {
       return const Center(child: CircularProgressIndicator());
     }
@@ -67,7 +64,7 @@ class _FriendProfileViewState extends State<FriendProfileView> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     ClipRRect(
-                      borderRadius: BorderRadiusGeometry.circular(100),
+                      borderRadius: BorderRadius.circular(100),
                       child: Image.asset(
                         "assets/imgs/profile.png",
                         width: 85,
@@ -100,12 +97,10 @@ class _FriendProfileViewState extends State<FriendProfileView> {
                               'followee_id': userFriend!.id!.toString(),
                             };
                             try {
-                              await followUser(body);
-                              if (mounted) {
-                                setState(() {
-                                  isFollowing = true;
-                                });
-                              }
+                              Provider.of<UserProvider>(
+                                context,
+                                listen: false,
+                              ).followUser(body);
                             } catch (e) {
                               print("Error: $e");
                               ScaffoldMessenger.of(context).showSnackBar(

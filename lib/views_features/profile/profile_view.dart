@@ -1,45 +1,16 @@
-import 'package:betweeener_app/controllers/link_controller.dart';
-import 'package:betweeener_app/controllers/user_controller.dart';
+import 'package:betweeener_app/core/helpers/api_response.dart';
 import 'package:betweeener_app/core/util/constants.dart';
-import 'package:betweeener_app/models/link_response_model.dart';
-import 'package:betweeener_app/models/user.dart';
+import 'package:betweeener_app/providers/link_provider.dart';
+import 'package:betweeener_app/providers/user_provider.dart';
 import 'package:betweeener_app/views_features/widgets/floating_action_btn.dart';
 import 'package:betweeener_app/views_features/widgets/link_card.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class ProfileView extends StatefulWidget {
+class ProfileView extends StatelessWidget {
   static String id = '/profileView';
 
   const ProfileView({super.key});
-
-  @override
-  State<ProfileView> createState() => _ProfileViewState();
-}
-
-class _ProfileViewState extends State<ProfileView> {
-  late Future<User> user;
-  late Future<List<LinkElement>> links;
-  late Future<Map<String, dynamic>> follows;
-
-  @override
-  void initState() {
-    user = getCurrentUser(context);
-    links = getUserLinks();
-    super.initState();
-    follows = getUserFollows();
-  }
-
-  void _deleteLink(int idLink) {
-    deleteLink(context, idLink)
-        .then((value) {
-          getUserLinks();
-        })
-        .catchError((error) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(error.toString())));
-        });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,102 +48,91 @@ class _ProfileViewState extends State<ProfileView> {
                             height: 85,
                           ),
                         ),
-                        FutureBuilder(
-                          future: user,
-                          builder: (context, snapshot) {
-                            if (snapshot.connectionState ==
-                                ConnectionState.waiting) {
-                              return Center(child: Text("Loading.."));
-                            } else if (snapshot.hasError) {
-                              return Center(child: Text("Error !!"));
-                            } else {
-                              return Column(
-                                spacing: 8,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    snapshot.data!.user!.name!,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
+                        Column(
+                          spacing: 8,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "${Provider.of<UserProvider>(context).currentUser!.user!.name}",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                            Text(
+                              "${Provider.of<UserProvider>(context).currentUser!.user!.email}",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                              ),
+                            ),
+                            Text(
+                              "+9700000000",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                              ),
+                            ),
+                            Consumer<UserProvider>(
+                              builder: (_, userProvider, _) {
+                                if (userProvider.userFollows.status ==
+                                    Status.LOADING) {
+                                  return Center(
+                                    child: CircularProgressIndicator(),
+                                  );
+                                } else if (userProvider.userFollows.status ==
+                                    Status.ERROR) {
+                                  return Text(
+                                    "${userProvider.userFollows.message}",
+                                  );
+                                }
+                                return Row(
+                                  spacing: 8,
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 12,
+                                        vertical: 4,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: kSecondaryColor,
+                                        borderRadius: BorderRadius.circular(7),
+                                      ),
+                                      child: Text(
+                                        "followers ${userProvider.userFollows.data!['followers_count']}",
+                                        style: TextStyle(
+                                          fontSize: 10,
+                                          color: kPrimaryColor,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    snapshot.data!.user!.email!,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12,
+                                    Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 12,
+                                        vertical: 4,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: kSecondaryColor,
+                                        borderRadius: BorderRadius.circular(7),
+                                      ),
+                                      child: Text(
+                                        "following ${userProvider.userFollows.data!['following_count']}",
+                                        style: TextStyle(
+                                          fontSize: 10,
+                                          color: kPrimaryColor,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    "+9700000000",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                  FutureBuilder(
-                                    future: follows,
-                                    builder: (context, snapshot) {
-                                      if (snapshot.connectionState ==
-                                          ConnectionState.waiting) {
-                                        return Text("Laoding..");
-                                      } else if (snapshot.hasError) {
-                                        return Text(snapshot.error.toString());
-                                      } else {
-                                        return Row(
-                                          spacing: 8,
-                                          children: [
-                                            Container(
-                                              padding: EdgeInsets.symmetric(
-                                                horizontal: 12,
-                                                vertical: 4,
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: kSecondaryColor,
-                                                borderRadius:
-                                                    BorderRadius.circular(7),
-                                              ),
-                                              child: Text(
-                                                "followers ${snapshot.data!['followers_count']}",
-                                                style: TextStyle(
-                                                  fontSize: 10,
-                                                  color: kPrimaryColor,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                            ),
-                                            Container(
-                                              padding: EdgeInsets.symmetric(
-                                                horizontal: 12,
-                                                vertical: 4,
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: kSecondaryColor,
-                                                borderRadius:
-                                                    BorderRadius.circular(7),
-                                              ),
-                                              child: Text(
-                                                "following ${snapshot.data!['following_count']}",
-                                                style: TextStyle(
-                                                  fontSize: 10,
-                                                  color: kPrimaryColor,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        );
-                                      }
-                                    },
-                                  ),
-                                ],
-                              );
-                            }
-                          },
+                                  ],
+                                );
+                              },
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -193,37 +153,35 @@ class _ProfileViewState extends State<ProfileView> {
               ],
             ),
             SizedBox(height: 12),
-            FutureBuilder(
-              future: links,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
+            Consumer<LinkProvider>(
+              builder: (_, linkProvider, _) {
+                if (linkProvider.linkList.status == Status.LOADING) {
                   return Center(child: CircularProgressIndicator());
-                } else if (snapshot.hasError) {
-                  return Center(child: Text(snapshot.error.toString()));
-                } else if (!snapshot.hasData) {
-                  return Center(child: Text("No Links found!"));
-                } else {
-                  return Expanded(
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: snapshot.data!.length,
-                      itemBuilder: (context, index) {
-                        return LinkCard(
-                          isSlidable: true,
-                          title: snapshot.data![index].title,
-                          link: snapshot.data![index].link,
-                          color: index.isOdd
-                              ? kLightDangerColor
-                              : kLightPrimaryColor,
-                          idLink: snapshot.data![index].id,
-                          onDelete: () {
-                            _deleteLink(snapshot.data![index].id);
-                          },
-                        );
-                      },
-                    ),
-                  );
+                } else if (linkProvider.linkList.status == Status.ERROR) {
+                  return Text("${linkProvider.linkList.message}");
                 }
+                return Expanded(
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: linkProvider.linkList.data!.length,
+                    itemBuilder: (context, index) {
+                      return LinkCard(
+                        isSlidable: true,
+                        title: linkProvider.linkList.data![index].title,
+                        link: linkProvider.linkList.data![index].link,
+                        color: index.isOdd
+                            ? kLightDangerColor
+                            : kLightPrimaryColor,
+                        idLink: linkProvider.linkList.data![index].id,
+                        onDelete: () async {
+                          await linkProvider.deleteLinkFromList(
+                            linkProvider.linkList.data![index].id,
+                          );
+                        },
+                      );
+                    },
+                  ),
+                );
               },
             ),
           ],

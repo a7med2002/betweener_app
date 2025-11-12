@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final link = linkFromJson(jsonString);
-
 import 'dart:convert';
 
 Link linkFromJson(String str) => Link.fromJson(json.decode(str));
