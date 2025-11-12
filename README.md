@@ -1,52 +1,75 @@
 # 🔗 Betweener App
 
-A modern and social Flutter application that allows users to create, manage, and share personal links through unique profiles and QR codes. Built for simplicity, speed, and seamless user interaction.
+A modern Flutter-based social networking app that allows users to share and manage their personal links through customizable profiles and scannable QR codes.  
+Built with clean architecture, provider-based state management, and RESTful API integration.
 
 ---
 
 ## 📌 Project Overview
 
-**Betweener** is a cross-platform Flutter app that connects users through shareable profiles containing personalized links.  
-It supports secure authentication, QR code generation, user following, and quick access to friends’ profiles — making link sharing fast, fun, and social.
+**Betweener** is a social platform designed for seamless connection through personalized link profiles.  
+Each user has a unique account with editable links, a QR code for quick sharing, and the ability to discover and follow other users.
 
-Whether for professionals, content creators, or businesses, Betweener offers a lightweight and visually appealing way to manage your digital presence.
+The app ensures smooth user experiences with persistent login, dynamic data updates, and responsive design optimized for all devices.
 
 ---
 
-## 🛠️ Tech Stack
+## 🧩 Tech Stack & Dependencies
 
-- **Flutter** – Cross-platform UI toolkit  
-- **Dart** – Core programming language  
-- **HTTP** – REST API communication  
-- **Shared Preferences** – Local storage for tokens & user data  
-- **QR Flutter** – QR code generation  
-- **Email Validator** – User input validation  
-- **Flutter SVG / Slidable** – Beautiful, interactive UI elements  
+- 🐦 **Flutter (Dart)** – Cross-platform app framework  
+- 🧠 **Provider** – State management  
+- 🌐 **HTTP** – REST API handling  
+- 💾 **Shared Preferences** – Local persistence for user sessions  
+- 📱 **QR Flutter** – QR code generation  
+- ✉️ **Email Validator** – Email input validation  
+- 🧩 **Flutter SVG** – Vector graphics and icons  
+- 🔄 **Slidable** – Swipe actions for link management  
+- 🎞️ **Lottie / Animated Assets** – Interactive animations 
 
 ---
 
 ## 🧱 Architecture
 
-The project follows a **modular and scalable architecture** ensuring clarity and maintainability:
+The project follows a **Provider-based architecture** with a clear separation of concerns:
 
-- **Controllers:** Handle business logic and API communication (Auth, Links, User).  
-- **Models:** Define data structures and handle JSON serialization.  
-- **Core Helpers:** Manage constants, exceptions, shared preferences, and API base logic.  
-- **Views (Features):** Organized screens for Onboarding, Authentication, Profile, Home, Search, and Links management.  
-- **Assets:** Contains images and SVGs used throughout the UI.  
+| Layer | Description |
+|--------|--------------|
+| **Models** | Define data structures (User, Link, etc.) and handle JSON serialization/deserialization. |
+| **Providers** | Manage application state (Auth, User, Links) using `ChangeNotifier` and the Provider package. |
+| **Repositories** | Handle API communication (AuthRepository, UserRepository, LinkRepository). |
+| **Core Helpers** | Contain reusable utilities such as constants, API responses, and shared preference helpers. |
+| **Views (Features)** | Organized by functionality — includes Authentication, Home, Search, Profile, and Onboarding screens. |
+| **Widgets** | Reusable UI components (buttons, form fields, link cards, etc.). |
 
 ---
 
-## ✨ Features
+## ✨ Core Features
 
-- 🔐 **User Authentication** – Register & login with secure API calls  
-- 👤 **Profile Management** – View and customize user profile  
-- 🌐 **Links Management** – Add, update, and delete links easily  
-- 📸 **QR Code Generation** – Instantly share your profile via scannable QR  
-- 🔎 **User Search** – Find and follow other users  
-- 🤝 **Follow System** – View followers & following lists  
-- 🚀 **Onboarding Flow** – Simple guided intro for new users  
-- 💾 **Local Storage** – Persistent login and onboarding state  
+- 🔐 **User Authentication**
+  - Register & login with API integration  
+  - Secure token storage using `SharedPreferences`  
+
+- 👤 **User Profile**
+  - Displays name, email, and QR code  
+  - Auto-loads saved session data  
+
+- 🔗 **Link Management**
+  - Add, update, and delete custom links  
+  - Real-time refresh after CRUD operations  
+
+- 🔍 **User Search**
+  - Search for other users by name  
+  - View friend profiles and follow/unfollow  
+
+- 🤝 **Follow System**
+  - Follow/unfollow users dynamically  
+  - Check follow status in real-time  
+
+- 📸 **QR Code**
+  - Generate and scan QR for quick profile sharing  
+
+- 💾 **Persistent Storage**
+  - Automatically loads saved user session on app startup   
 
 ---
 
@@ -74,4 +97,4 @@ The project follows a **modular and scalable architecture** ensuring clarity and
 ## 🌐 Social Links
 - 👨‍💻 Developer: [ِAhmed Meqdad]
 - 📧 Email: [ahmd2002mqdad@gamil.com]
-- 💼 LinkedIn: [linkedin.com/in/ahmed-meqdad](https://www.linkedin.com/in/ahmed-meqdad-3b756733b/)
+- 💼 LinkedIn: [linkedin.com/in/ahmed-meqdad](https://www.linkedin.com/in/ahmedmeqdad0)

@@ -75,10 +75,17 @@ dependencies:
   email_validator: ^3.0.0
   flutter_slidable: ^4.0.3
   qr_flutter: ^4.1.0
+  flutter_launcher_icons: ^0.14.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_launcher_icons:
+  android: "app_icon"
+  ios: true
+  image_path: "assets/imgs/appIcon.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -139,9 +146,9 @@ flutter:
 ===== D:\Android\kick_lance_project\betweener_app\android\app\src\main\AndroidManifest.xml =====
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="betweeener_app"
+        android:label="Betweener"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/app_icon">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -255,128 +262,7 @@ flutter:
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
 ===== D:\Android\kick_lance_project\betweener_app\ios\Runner\Assets.xcassets\AppIcon.appiconset\Contents.json =====
-{
-  "images" : [
-    {
-      "size" : "20x20",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-20x20@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "20x20",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-20x20@3x.png",
-      "scale" : "3x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-29x29@1x.png",
-      "scale" : "1x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-29x29@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-29x29@3x.png",
-      "scale" : "3x"
-    },
-    {
-      "size" : "40x40",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-40x40@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "40x40",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-40x40@3x.png",
-      "scale" : "3x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-60x60@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-60x60@3x.png",
-      "scale" : "3x"
-    },
-    {
-      "size" : "20x20",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-20x20@1x.png",
-      "scale" : "1x"
-    },
-    {
-      "size" : "20x20",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-20x20@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-29x29@1x.png",
-      "scale" : "1x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-29x29@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "40x40",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-40x40@1x.png",
-      "scale" : "1x"
-    },
-    {
-      "size" : "40x40",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-40x40@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "76x76",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-76x76@1x.png",
-      "scale" : "1x"
-    },
-    {
-      "size" : "76x76",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-76x76@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "83.5x83.5",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-83.5x83.5@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "1024x1024",
-      "idiom" : "ios-marketing",
-      "filename" : "Icon-App-1024x1024@1x.png",
-      "scale" : "1x"
-    }
-  ],
-  "info" : {
-    "version" : 1,
-    "author" : "xcode"
-  }
-}
+{"images":[{"size":"20x20","idiom":"iphone","filename":"Icon-App-20x20@2x.png","scale":"2x"},{"size":"20x20","idiom":"iphone","filename":"Icon-App-20x20@3x.png","scale":"3x"},{"size":"29x29","idiom":"iphone","filename":"Icon-App-29x29@1x.png","scale":"1x"},{"size":"29x29","idiom":"iphone","filename":"Icon-App-29x29@2x.png","scale":"2x"},{"size":"29x29","idiom":"iphone","filename":"Icon-App-29x29@3x.png","scale":"3x"},{"size":"40x40","idiom":"iphone","filename":"Icon-App-40x40@2x.png","scale":"2x"},{"size":"40x40","idiom":"iphone","filename":"Icon-App-40x40@3x.png","scale":"3x"},{"size":"57x57","idiom":"iphone","filename":"Icon-App-57x57@1x.png","scale":"1x"},{"size":"57x57","idiom":"iphone","filename":"Icon-App-57x57@2x.png","scale":"2x"},{"size":"60x60","idiom":"iphone","filename":"Icon-App-60x60@2x.png","scale":"2x"},{"size":"60x60","idiom":"iphone","filename":"Icon-App-60x60@3x.png","scale":"3x"},{"size":"20x20","idiom":"ipad","filename":"Icon-App-20x20@1x.png","scale":"1x"},{"size":"20x20","idiom":"ipad","filename":"Icon-App-20x20@2x.png","scale":"2x"},{"size":"29x29","idiom":"ipad","filename":"Icon-App-29x29@1x.png","scale":"1x"},{"size":"29x29","idiom":"ipad","filename":"Icon-App-29x29@2x.png","scale":"2x"},{"size":"40x40","idiom":"ipad","filename":"Icon-App-40x40@1x.png","scale":"1x"},{"size":"40x40","idiom":"ipad","filename":"Icon-App-40x40@2x.png","scale":"2x"},{"size":"50x50","idiom":"ipad","filename":"Icon-App-50x50@1x.png","scale":"1x"},{"size":"50x50","idiom":"ipad","filename":"Icon-App-50x50@2x.png","scale":"2x"},{"size":"72x72","idiom":"ipad","filename":"Icon-App-72x72@1x.png","scale":"1x"},{"size":"72x72","idiom":"ipad","filename":"Icon-App-72x72@2x.png","scale":"2x"},{"size":"76x76","idiom":"ipad","filename":"Icon-App-76x76@1x.png","scale":"1x"},{"size":"76x76","idiom":"ipad","filename":"Icon-App-76x76@2x.png","scale":"2x"},{"size":"83.5x83.5","idiom":"ipad","filename":"Icon-App-83.5x83.5@2x.png","scale":"2x"},{"size":"1024x1024","idiom":"ios-marketing","filename":"Icon-App-1024x1024@1x.png","scale":"1x"}],"info":{"version":1,"author":"xcode"}}
 ===== D:\Android\kick_lance_project\betweener_app\ios\Runner\Assets.xcassets\LaunchImage.imageset\Contents.json =====
 {
   "images" : [
@@ -402,6 +288,8 @@ flutter:
   }
 }
 ===== D:\Android\kick_lance_project\betweener_app\lib\main.dart =====
+import 'package:betweeener_app/providers/link_provider.dart';
+import 'package:betweeener_app/providers/user_provider.dart';
 import 'package:betweeener_app/views_features/auth/login_view.dart';
 import 'package:betweeener_app/views_features/auth/register_view.dart';
 import 'package:betweeener_app/views_features/home/home_view.dart';
@@ -415,6 +303,7 @@ import 'package:betweeener_app/views_features/profile/profile_view.dart';
 import 'package:betweeener_app/views_features/recieve/receive_view.dart';
 import 'package:betweeener_app/views_features/search/search_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'core/util/constants.dart';
 
 void main() {
@@ -426,240 +315,43 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Betweener',
-      theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: kPrimaryColor,
-        appBarTheme: const AppBarTheme(
-          titleTextStyle: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: kPrimaryColor,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => LinkProvider()),
+        ChangeNotifierProvider(create: (_) => UserProvider()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Betweener',
+        theme: ThemeData(
+          useMaterial3: true,
+          colorSchemeSeed: kPrimaryColor,
+          appBarTheme: const AppBarTheme(
+            titleTextStyle: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: kPrimaryColor,
+            ),
           ),
+          scaffoldBackgroundColor: kScaffoldColor,
         ),
-        scaffoldBackgroundColor: kScaffoldColor,
+        home: const LoadingView(),
+        routes: {
+          OnBoardingView.id: (context) => OnBoardingView(),
+          LoadingView.id: (context) => LoadingView(),
+          LoginView.id: (context) => LoginView(),
+          RegisterView.id: (context) => RegisterView(),
+          HomeView.id: (context) => HomeView(),
+          MainAppView.id: (context) => MainAppView(),
+          ProfileView.id: (context) => ProfileView(),
+          ReceiveView.id: (context) => ReceiveView(),
+          AddLinkView.id: (context) => AddLinkView(),
+          EditLinkView.id: (context) => EditLinkView(),
+          SearchView.id: (context) => SearchView(),
+          FriendProfileView.id: (contex) => FriendProfileView(),
+        },
       ),
-      home: const LoadingView(),
-      routes: {
-        OnBoardingView.id: (context) => const OnBoardingView(),
-        LoadingView.id: (context) => const LoadingView(),
-        LoginView.id: (context) => const LoginView(),
-        RegisterView.id: (context) => const RegisterView(),
-        HomeView.id: (context) => const HomeView(),
-        MainAppView.id: (context) => const MainAppView(),
-        ProfileView.id: (context) => const ProfileView(),
-        ReceiveView.id: (context) => const ReceiveView(),
-        AddLinkView.id: (context) => const AddLinkView(),
-        EditLinkView.id: (context) => const EditLinkView(),
-        SearchView.id: (context) => const SearchView(),
-        FriendProfileView.id: (contex) => const FriendProfileView(),
-      },
     );
-  }
-}
-===== D:\Android\kick_lance_project\betweener_app\lib\controllers\auth_controller.dart =====
-import 'package:betweeener_app/models/user.dart';
-import 'package:http/http.dart' as http;
-import '../core/util/constants.dart';
-
-Future<User> login(Map<String, String> body) async {
-  final response = await http.post(Uri.parse(loginUrl), body: body);
-  if (response.statusCode == 200) {
-    return userFromJson(response.body);
-  } else {
-    throw Exception('Failed to Login');
-  }
-}
-
-Future<User> register(Map<String, String> body) async {
-  final response = await http.post(Uri.parse(registerUrl), body: body);
-  if (response.statusCode == 201) {
-    return userFromJson(response.body);
-  } else {
-    throw Exception('Failed to Register');
-  }
-}
-===== D:\Android\kick_lance_project\betweener_app\lib\controllers\link_controller.dart =====
-import 'dart:convert';
-
-import 'package:betweeener_app/core/util/constants.dart';
-import 'package:betweeener_app/models/user.dart';
-import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-import '../models/link_response_model.dart';
-import 'package:http/http.dart' as http;
-
-Future<List<LinkElement>> getUserLinks() async {
-  late User user;
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
-  user = userFromJson(prefs.getString('user')!);
-  final response = await http.get(
-    Uri.parse(linksUrl),
-    headers: {'Authorization': 'Bearer ${user.token}'},
-  );
-
-  if (response.statusCode == 200) {
-    Map<String, dynamic> responseBody = jsonDecode(response.body);
-    Link linksData = Link.fromJson(responseBody);
-    return linksData.links;
-  } else {
-    return Future.error("Error Fetch Links !!");
-  }
-}
-
-Future<void> addLink(BuildContext context, Map<String, String> body) async {
-  late User user;
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
-  user = userFromJson(prefs.getString('user')!);
-  final response = await http.post(
-    Uri.parse(linksUrl),
-    body: body,
-    headers: {'Authorization': 'Bearer ${user.token}'},
-  );
-  if (response.statusCode == 200) {
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text("Link Added Successfully ✅")));
-  } else {
-    Future.error("Error Add Link !!");
-  }
-}
-
-Future<void> updateLink(
-  BuildContext context,
-  Map<String, String> body,
-  int linkId,
-) async {
-  late User user;
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  user = userFromJson(prefs.getString('user')!);
-  final response = await http.put(
-    Uri.parse('$linksUrl/$linkId'),
-    body: body,
-    headers: {'Authorization': 'Bearer ${user.token}'},
-  );
-  if (response.statusCode == 200) {
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text("Link Updated Successfully ✅")));
-  } else {
-    throw Exception("Error in update link!");
-  }
-}
-
-Future<void> deleteLink(BuildContext context, int linkId) async {
-  late User user;
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
-  user = userFromJson(prefs.getString('user')!);
-  final response = await http.delete(
-    Uri.parse("$linksUrl/$linkId"),
-    headers: {'Authorization': 'Bearer ${user.token}'},
-  );
-
-  if (response.statusCode == 200) {
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text("Link Deleted Successfully ✅")));
-  } else {
-    throw Exception("Error in delete link!");
-  }
-}
-===== D:\Android\kick_lance_project\betweener_app\lib\controllers\user_controller.dart =====
-import 'dart:convert';
-
-import 'package:betweeener_app/core/util/constants.dart';
-import 'package:betweeener_app/views_features/auth/login_view.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:http/http.dart' as http;
-import '../models/user.dart';
-
-Future<User> getCurrentUser(BuildContext context) async {
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
-  if (prefs.containsKey('user')) {
-    return userFromJson(prefs.getString('user')!);
-  } else {
-    Navigator.pushReplacementNamed(context, LoginView.id);
-    return Future.error('User Not Found');
-  }
-}
-
-Future<Map<String, dynamic>> getUserFollows() async {
-  final prefs = await SharedPreferences.getInstance();
-  final User user = userFromJson(prefs.getString('user')!);
-  final response = await http.get(
-    Uri.parse(followUrl),
-    headers: {'Authorization': 'Bearer ${user.token}'},
-  );
-  if (response.statusCode == 200) {
-    final Map<String, dynamic> userFollow = jsonDecode(response.body);
-    return userFollow;
-  } else {
-    return Future.error("Failed to Fetch Follows");
-  }
-}
-
-Future<List<UserClass>> searchUser(String userName) async {
-  final body = {'name': userName};
-  late User user;
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
-  user = userFromJson(prefs.getString('user')!);
-  final response = await http.post(
-    Uri.parse(searchUrl),
-    body: body,
-    headers: {'Authorization': 'Bearer ${user.token}'},
-  );
-  if (response.statusCode == 200) {
-    final responseData = jsonDecode(response.body);
-
-    List<UserClass> resultUsers = (responseData['user'] as List)
-        .map((user) => UserClass.fromJson(user))
-        .toList();
-
-    return resultUsers;
-  } else {
-    return Future.error("Error in Search!!");
-  }
-}
-
-Future<void> followUser(Map<String, String> body) async {
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
-  User user = userFromJson(prefs.getString('user')!);
-  final response = await http.post(
-    Uri.parse(followUrl),
-    body: body,
-    headers: {'Authorization': 'Bearer ${user.token}'},
-  );
-
-  if (response.statusCode == 200) {
-    print("Follow Succesfully");
-  } else {
-    Future.error("Error In Follow User!");
-  }
-}
-
-Future<bool> checkIfIsFollowing(int friendId) async {
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
-  User user = userFromJson(prefs.getString('user')!);
-
-  final response = await http.get(
-    Uri.parse(followUrl),
-    headers: {'Authorization': 'Bearer ${user.token}'},
-  );
-  if (response.statusCode == 200) {
-    final responseBody = jsonDecode(response.body);
-    final List following = responseBody['following'];
-    for (var friend in following) {
-      if (friend['id'] == friendId) {
-        return true;
-      }
-    }
-    return false;
-  } else {
-    return Future.error("Failed to check follow status");
   }
 }
 ===== D:\Android\kick_lance_project\betweener_app\lib\core\helpers\api_base_helper.dart =====
@@ -705,6 +397,39 @@ class ApiBaseHelper {
       throw FetchDataException('No Internet connection');
     }
     return responseJson;
+  }
+
+  Future<dynamic> update(
+    String url,
+    Map<String, String> body,
+    Map<String, String> header,
+  ) async {
+    var responseJson;
+    try {
+      final response = await http.put(
+        Uri.parse(baseUrl + url),
+        body: body,
+        headers: header,
+      );
+      responseJson = _returnResponse(response);
+      return responseJson;
+    } on SocketException {
+      throw FetchDataException('No Internet connection');
+    }
+  }
+
+  Future<dynamic> delete(String url, Map<String, String> header) async {
+    var responseJson;
+    try {
+      final response = await http.delete(
+        Uri.parse(baseUrl + url),
+        headers: header,
+      );
+      responseJson = _returnResponse(response);
+      return responseJson;
+    } on SocketException {
+      throw FetchDataException('No Internet connection');
+    }
   }
 
   dynamic _returnResponse(http.Response response) {
@@ -923,10 +648,6 @@ abstract class Styles {
   );
 }
 ===== D:\Android\kick_lance_project\betweener_app\lib\models\link_response_model.dart =====
-// To parse this JSON data, do
-//
-//     final link = linkFromJson(jsonString);
-
 import 'dart:convert';
 
 Link linkFromJson(String str) => Link.fromJson(json.decode(str));
@@ -1072,112 +793,442 @@ class UserClass {
     "lat": lat,
   };
 }
-===== D:\Android\kick_lance_project\betweener_app\lib\views_features\main_app_view.dart =====
-import 'package:betweeener_app/views_features/profile/profile_view.dart';
-import 'package:betweeener_app/views_features/recieve/receive_view.dart';
-import 'package:betweeener_app/views_features/widgets/custom_floating_nav_bar.dart';
+===== D:\Android\kick_lance_project\betweener_app\lib\providers\link_provider.dart =====
+import 'package:betweeener_app/core/helpers/api_response.dart';
+import 'package:betweeener_app/models/link_response_model.dart';
+import 'package:betweeener_app/repos/link_repository.dart';
 import 'package:flutter/material.dart';
 
-import 'home/home_view.dart';
+class LinkProvider extends ChangeNotifier {
+  late LinkRepository _linkRepository;
+  late ApiResponse<List<LinkElement>> _linkList;
 
-class MainAppView extends StatefulWidget {
+  ApiResponse<List<LinkElement>> get linkList => _linkList;
+
+  LinkProvider() {
+    _linkRepository = LinkRepository();
+    fetchLinkList();
+  }
+
+  fetchLinkList() async {
+    _linkList = ApiResponse.loading("Fetching Links..");
+    notifyListeners();
+    try {
+      List<LinkElement> links = await _linkRepository.getUserLinks();
+      _linkList = ApiResponse.completed(links);
+      notifyListeners();
+    } catch (e) {
+      _linkList = ApiResponse.error(e.toString());
+      notifyListeners();
+    }
+  }
+
+  addLinkToList(Map<String, String> body) async {
+    try {
+      await _linkRepository.addLink(body);
+      final links = await _linkRepository.getUserLinks();
+      _linkList = ApiResponse.completed(links);
+      notifyListeners();
+    } catch (e) {
+      ApiResponse.error(e.toString());
+      notifyListeners();
+    }
+  }
+
+  updateLinkList(Map<String, String> body, int linkId) async {
+    try {
+      await _linkRepository.updateLink(body, linkId);
+      await fetchLinkList();
+    } catch (e) {
+      ApiResponse.error(e.toString());
+      notifyListeners();
+    }
+  }
+
+  deleteLinkFromList(int linkId) async {
+    try {
+      await _linkRepository.deleteLink(linkId);
+      await fetchLinkList();
+    } catch (e) {
+      ApiResponse.error(e.toString());
+      notifyListeners();
+    }
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\providers\user_provider.dart =====
+import 'package:betweeener_app/core/helpers/api_response.dart';
+import 'package:betweeener_app/models/user.dart';
+import 'package:betweeener_app/repos/user_repository.dart';
+import 'package:betweeener_app/views_features/home/home_view.dart';
+import 'package:betweeener_app/views_features/profile/profile_view.dart';
+import 'package:betweeener_app/views_features/recieve/receive_view.dart';
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+class UserProvider extends ChangeNotifier {
+
+  //========= For Navigation Bar===============
+  int index = 1;
+  late List<Widget?> screensList = [
+     ReceiveView(),
+     HomeView(),
+     ProfileView(),
+  ];
+  //===========================================
+
+  User? _currentUser;
+  bool isLoadingUser = true;
+
+  late ApiResponse<User> _user;
+
+  late ApiResponse<List<UserClass>> _usersList;
+  late ApiResponse<Map<String, dynamic>> _userFollows;
+  late ApiResponse<bool> _isFollowing;
+
+  late UserRepository _userRepository;
+
+  User? get currentUser => _currentUser;
+
+  ApiResponse<User> get user => _user;
+
+  ApiResponse<List<UserClass>> get usersList => _usersList;
+  ApiResponse<Map<String, dynamic>> get userFollows => _userFollows;
+  ApiResponse<bool> get isFollowing => _isFollowing;
+
+  UserProvider() {
+    _userRepository = UserRepository();
+    getCurrentUser();
+    fetchUserFollows();
+    _usersList = ApiResponse.completed([]);
+    _isFollowing = ApiResponse.completed(false);
+  }
+
+  void changeIndex(int newIndex) {
+    index = newIndex;
+    notifyListeners();
+  }
+
+  Future<void> getCurrentUser() async {
+    isLoadingUser = true;
+    notifyListeners();
+
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (prefs.containsKey('user')) {
+      _currentUser = userFromJson(prefs.getString('user')!);
+
+      isLoadingUser = false;
+      notifyListeners();
+    } else {
+      _currentUser = null;
+    }
+  }
+
+  Future<User?> login(Map<String, String> body) async {
+    _user = ApiResponse.loading("Loginig..");
+    notifyListeners();
+    try {
+      User resultUser = await _userRepository.login(body);
+      _user = ApiResponse.completed(resultUser);
+      notifyListeners();
+      return resultUser;
+    } catch (e) {
+      _user = ApiResponse.error(e.toString());
+      notifyListeners();
+      return null;
+    }
+  }
+
+  Future<User?> register(Map<String, String> body) async {
+    _user = ApiResponse.loading("Registering..");
+    notifyListeners();
+    try {
+      User resultUser = await _userRepository.register(body);
+      _user = ApiResponse.completed(resultUser);
+      notifyListeners();
+      return resultUser;
+    } catch (e) {
+      _user = ApiResponse.error(e.toString());
+      notifyListeners();
+      return null;
+    }
+  }
+
+  void setUser(User newUser) {
+    _currentUser = newUser;
+    isLoadingUser = false;
+    notifyListeners();
+  }
+
+  fetchUserFollows() async {
+    _userFollows = ApiResponse.loading("Fetching user follows");
+    notifyListeners();
+    try {
+      final Map<String, dynamic> followsList = await _userRepository
+          .getUserFollows();
+      _userFollows = ApiResponse.completed(followsList);
+      notifyListeners();
+    } catch (e) {
+      _userFollows = ApiResponse.error(e.toString());
+      notifyListeners();
+    }
+  }
+
+  searchUser(String userName) async {
+    _usersList = ApiResponse.loading("Searching Users");
+    notifyListeners();
+    try {
+      final List<UserClass> usersResult = await _userRepository.searchUser(
+        userName,
+      );
+      _usersList = ApiResponse.completed(usersResult);
+      notifyListeners();
+    } catch (e) {
+      _usersList = ApiResponse.error(e.toString());
+      notifyListeners();
+    }
+  }
+
+  followUser(Map<String, String> body) async {
+    _isFollowing = ApiResponse.loading("following user");
+    notifyListeners();
+    try {
+      await _userRepository.followUser(body);
+      _isFollowing = ApiResponse.completed(true);
+      notifyListeners();
+    } catch (e) {
+      ApiResponse.error(e.toString());
+      notifyListeners();
+    }
+  }
+
+  checkIfIsFollowing(int friendId) async {
+    _isFollowing = ApiResponse.loading("loading");
+    notifyListeners();
+    try {
+      bool result = await _userRepository.checkIfIsFollowing(friendId);
+      _isFollowing = ApiResponse.completed(result);
+      notifyListeners();
+    } catch (e) {
+      _isFollowing = ApiResponse.error(e.toString());
+      notifyListeners();
+    }
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\repos\link_repository.dart =====
+import 'package:betweeener_app/core/helpers/api_base_helper.dart';
+import 'package:betweeener_app/models/link_response_model.dart';
+import 'package:betweeener_app/models/user.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+class LinkRepository {
+  ApiBaseHelper _helper = ApiBaseHelper();
+
+  Future<List<LinkElement>> getUserLinks() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    User user = userFromJson(prefs.getString('user')!);
+    final response = await _helper.get("/links", {
+      'Authorization': 'Bearer ${user.token}',
+    });
+    return Link.fromJson(response).links;
+  }
+
+  Future<dynamic> addLink(Map<String, String> body) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    User user = userFromJson(prefs.getString('user')!);
+    final response = _helper.post("/links", body, {
+      'Authorization': 'Bearer ${user.token}',
+    });
+  }
+
+  Future<dynamic> updateLink(Map<String, String> body, int linkId) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    User user = userFromJson(prefs.getString('user')!);
+    final response = await _helper.update("/links/$linkId", body, {
+      'Authorization': 'Bearer ${user.token}',
+    });
+  }
+
+  Future<dynamic> deleteLink(int linkId) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    User user = userFromJson(prefs.getString('user')!);
+    final response = _helper.delete("/links/$linkId", {
+      'Authorization': 'Bearer ${user.token}',
+    });
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\repos\user_repository.dart =====
+import 'package:betweeener_app/core/helpers/api_base_helper.dart';
+import 'package:betweeener_app/models/user.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+class UserRepository {
+  ApiBaseHelper _helper = ApiBaseHelper();
+
+  Future<Map<String, dynamic>> getUserFollows() async {
+    final prefs = await SharedPreferences.getInstance();
+    final User user = userFromJson(prefs.getString('user')!);
+    final response = await _helper.get("/follow", {
+      'Authorization': 'Bearer ${user.token}',
+    });
+    return response;
+  }
+
+  Future<List<UserClass>> searchUser(String userName) async {
+    final body = {'name': userName};
+    late User user;
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    user = userFromJson(prefs.getString('user')!);
+    final response = await _helper.post("/search", body, {
+      'Authorization': 'Bearer ${user.token}',
+    });
+    List<UserClass> resultUsers = (response['user'] as List)
+        .map((user) => UserClass.fromJson(user))
+        .toList();
+    return resultUsers;
+  }
+
+  Future<dynamic> followUser(Map<String, String> body) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    User user = userFromJson(prefs.getString('user')!);
+    final response = _helper.post("/follow", body, {
+      'Authorization': 'Bearer ${user.token}',
+    });
+  }
+
+  Future<bool> checkIfIsFollowing(int friendId) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    User user = userFromJson(prefs.getString('user')!);
+
+    final response = await _helper.get("/follow", {
+      'Authorization': 'Bearer ${user.token}',
+    });
+
+    final List following = response['following'];
+    for (var friend in following) {
+      if (friend['id'] == friendId) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  Future<dynamic> login(Map<String, String> body) async {
+    final response = await _helper.post("/login", body, {});
+
+    // final userJson = response['user'];
+    // final token = response['token'];
+
+    // User user = User.fromJson(userJson);
+    // user.token = token;
+    User user = User.fromJson({
+      "user": response['user'],
+      "token": response['token'],
+    });
+    return user;
+  }
+
+  Future<dynamic> register(Map<String, String> body) async {
+    final response = await _helper.post("/register", body, {});
+
+    // final userJson = response['user'];
+    // final token = response['token'];
+
+    // User user = User.fromJson(userJson);
+    // user.token = token;
+
+    User user = User.fromJson({
+      "user": response['user'],
+      "token": response['token'],
+    });
+    return user;
+  }
+}
+===== D:\Android\kick_lance_project\betweener_app\lib\views_features\main_app_view.dart =====
+import 'package:betweeener_app/providers/user_provider.dart';
+import 'package:betweeener_app/views_features/widgets/custom_floating_nav_bar.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+class MainAppView extends StatelessWidget {
   static String id = '/mainAppView';
 
   const MainAppView({super.key});
 
   @override
-  State<MainAppView> createState() => _MainAppViewState();
-}
-
-class _MainAppViewState extends State<MainAppView> {
-  int _currentIndex = 1;
-
-  late List<Widget?> screensList = [
-    const ReceiveView(),
-    const HomeView(),
-    const ProfileView(),
-  ];
-
-  @override
   Widget build(BuildContext context) {
+    final userProvider = Provider.of<UserProvider>(context);
     return Scaffold(
-
-      body: screensList[_currentIndex],
+      body: userProvider.screensList[userProvider.index],
       extendBody: true,
       bottomNavigationBar: CustomFloatingNavBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
+        currentIndex: userProvider.index,
+        onTap: (index) => userProvider.changeIndex(index),
       ),
     );
   }
 }
 ===== D:\Android\kick_lance_project\betweener_app\lib\views_features\auth\login_view.dart =====
+import 'package:betweeener_app/core/helpers/api_response.dart';
 import 'package:betweeener_app/core/util/assets.dart';
 import 'package:betweeener_app/models/user.dart';
+import 'package:betweeener_app/providers/user_provider.dart';
 import 'package:betweeener_app/views_features/auth/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:provider/provider.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../controllers/auth_controller.dart';
 import '../main_app_view.dart';
 import '../widgets/custom_text_form_field.dart';
 import '../widgets/google_button_widget.dart';
 import '../widgets/primary_outlined_button_widget.dart';
 import '../widgets/secondary_button_widget.dart';
 
-class LoginView extends StatefulWidget {
+class LoginView extends StatelessWidget {
   static String id = '/loginView';
 
-  const LoginView({super.key});
-
-  @override
-  State<LoginView> createState() => _LoginViewState();
-}
-
-class _LoginViewState extends State<LoginView> {
+  LoginView({super.key});
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
   final _formKey = GlobalKey<FormState>();
-
-  void submitLogin() {
-    if (_formKey.currentState!.validate()) {
-      final body = {
-        'email': emailController.text,
-        'password': passwordController.text,
-      };
-
-      login(body)
-          .then((user) async {
-            final SharedPreferences prefs =
-                await SharedPreferences.getInstance();
-            await prefs.setString('user', userToJson(user));
-
-            if (mounted) {
-              Navigator.pushReplacementNamed(context, MainAppView.id);
-            }
-          })
-          .catchError((error) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(error.toString()),
-                backgroundColor: Colors.red,
-              ),
-            );
-          });
-
-      // Navigator.pushNamed(context, MainAppView.id);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
+    void submitLogin() async {
+      if (_formKey.currentState!.validate()) {
+        final body = {
+          'email': emailController.text,
+          'password': passwordController.text,
+        };
+
+        final userProvider = Provider.of<UserProvider>(context, listen: false);
+        await userProvider.login(body);
+
+        final userResponse = userProvider.user;
+
+        if (userResponse.status == Status.COMPLETED &&
+            userResponse.data != null) {
+          final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+          await prefs.setString('user', userToJson(userResponse.data!));
+
+          userProvider.setUser(userResponse.data!);
+
+          Navigator.pushReplacementNamed(context, MainAppView.id);
+        } else if (userResponse.status == Status.ERROR) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(userResponse.message.toString()),
+              backgroundColor: Colors.red,
+            ),
+          );
+        }
+      }
+    }
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -1257,61 +1308,58 @@ class _LoginViewState extends State<LoginView> {
   }
 }
 ===== D:\Android\kick_lance_project\betweener_app\lib\views_features\auth\register_view.dart =====
-import 'package:betweeener_app/controllers/auth_controller.dart';
+import 'package:betweeener_app/core/helpers/api_response.dart';
 import 'package:betweeener_app/core/util/assets.dart';
+import 'package:betweeener_app/providers/user_provider.dart';
 import 'package:betweeener_app/views_features/auth/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/custom_text_form_field.dart';
 import '../widgets/google_button_widget.dart';
 import '../widgets/secondary_button_widget.dart';
 
-class RegisterView extends StatefulWidget {
+class RegisterView extends StatelessWidget {
   static String id = '/registerView';
 
-  const RegisterView({super.key});
+  RegisterView({super.key});
 
-  @override
-  State<RegisterView> createState() => _RegisterViewState();
-}
-
-class _RegisterViewState extends State<RegisterView> {
   TextEditingController nameController = TextEditingController();
-
   TextEditingController emailController = TextEditingController();
-
   TextEditingController passwordController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
 
-  void submitRigster() {
-    if (_formKey.currentState!.validate()) {
-      final body = {
-        'name': nameController.text,
-        'email': emailController.text,
-        'password': passwordController.text,
-        'password_confirmation': passwordController.text,
-      };
-      register(body)
-          .then((user) {
-            if (mounted) {
-              Navigator.pushReplacementNamed(context, LoginView.id);
-            }
-          })
-          .catchError((error) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(error.toString()),
-                backgroundColor: Colors.red,
-              ),
-            );
-          });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
+    void submitRigster() async {
+      if (_formKey.currentState!.validate()) {
+        final body = {
+          'name': nameController.text,
+          'email': emailController.text,
+          'password': passwordController.text,
+          'password_confirmation': passwordController.text,
+        };
+
+        final userProvider = Provider.of<UserProvider>(context, listen: false);
+        await userProvider.register(body);
+
+        final userResponse = userProvider.user;
+
+        if (userResponse.status == Status.COMPLETED) {
+          Navigator.pushReplacementNamed(context, LoginView.id);
+        } else if (userResponse.status == Status.ERROR) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(userResponse.message.toString()),
+              backgroundColor: Colors.red,
+            ),
+          );
+        }
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Register"),
@@ -1406,37 +1454,22 @@ class _RegisterViewState extends State<RegisterView> {
   }
 }
 ===== D:\Android\kick_lance_project\betweener_app\lib\views_features\home\home_view.dart =====
-import 'package:betweeener_app/controllers/link_controller.dart';
-import 'package:betweeener_app/controllers/user_controller.dart';
+import 'package:betweeener_app/core/helpers/api_response.dart';
+import 'package:betweeener_app/providers/link_provider.dart';
+import 'package:betweeener_app/providers/user_provider.dart';
 import 'package:betweeener_app/views_features/auth/login_view.dart';
 import 'package:betweeener_app/views_features/links/add_link_view.dart';
 import 'package:betweeener_app/views_features/search/search_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/util/constants.dart';
-import '../../models/link_response_model.dart';
-import '../../models/user.dart';
 
-class HomeView extends StatefulWidget {
+class HomeView extends StatelessWidget {
   static String id = '/homeView';
-  const HomeView({super.key});
-
-  @override
-  State<HomeView> createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<HomeView> {
-  late Future<User> user;
-  late Future<List<LinkElement>> links;
-
-  @override
-  void initState() {
-    user = getCurrentUser(context);
-    links = getUserLinks();
-    super.initState();
-  }
+  HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -1467,180 +1500,155 @@ class _HomeViewState extends State<HomeView> {
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
       ),
-      body: RefreshIndicator(
-        onRefresh: () async => await getUserLinks(),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: ListView(
-            children: [
-              FutureBuilder(
-                future: user,
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Text("Loading ..");
-                  } else if (snapshot.hasData) {
-                    return Text(
-                      "Hello, ${snapshot.data!.user!.name} !",
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: ListView(
+          children: [
+            Consumer<UserProvider>(
+              builder: (_, userProvider, _) {
+                if (userProvider.isLoadingUser) {
+                  return Center(child: CircularProgressIndicator());
+                }
+
+                final user = userProvider.currentUser;
+                if (user == null || user.user == null || user.token == null) {
+                  return Center(child: Text("No user data found"));
+                }
+
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Hello, ${user.user!.name}!",
                       style: TextStyle(
                         color: kPrimaryColor,
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                       ),
-                    );
-                  } else {
-                    return Text("Error !!");
-                  }
-                },
-              ),
-              SizedBox(height: 24),
-              FutureBuilder(
-                future: user,
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(child: CircularProgressIndicator());
-                  } else {
-                    return Center(
+                    ),
+                    SizedBox(height: 24),
+                    Center(
                       child: QrImageView(
-                        data: snapshot.data!.token!,
+                        data: user.token!,
                         foregroundColor: kPrimaryColor,
                         version: QrVersions.auto,
                         backgroundColor: Colors.transparent,
                         size: 300,
                       ),
-                    );
-                  }
-                },
-              ),
-              SizedBox(height: 24),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 70),
-                child: Divider(color: kPrimaryColor, thickness: 2),
-              ),
-              SizedBox(height: 24),
-              FutureBuilder(
-                future: links,
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Text("Loading ..");
-                  } else if (snapshot.hasData) {
-                    return SizedBox(
-                      height: 90,
-                      child: ListView.separated(
-                        separatorBuilder: (context, index) =>
-                            SizedBox(width: 16),
-                        scrollDirection: Axis.horizontal,
-                        shrinkWrap: true,
-                        itemCount: snapshot.data!.length + 1,
-                        itemBuilder: (context, index) {
-                          if (index == snapshot.data!.length) {
-                            return Container(
-                              padding: EdgeInsets.all(8),
-                              decoration: BoxDecoration(
-                                color: kLightPrimaryColor,
-                                borderRadius: BorderRadius.circular(16),
+                    ),
+                  ],
+                );
+              },
+            ),
+
+            SizedBox(height: 24),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 70),
+              child: Divider(color: kPrimaryColor, thickness: 2),
+            ),
+            SizedBox(height: 24),
+            Consumer<LinkProvider>(
+              builder: (_, linkProvider, _) {
+                if (linkProvider.linkList.status == Status.LOADING) {
+                  return Center(child: CircularProgressIndicator());
+                } else if (linkProvider.linkList.status == Status.ERROR) {
+                  return Text("${linkProvider.linkList.message}");
+                }
+                return SizedBox(
+                  height: 90,
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) => SizedBox(width: 16),
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: linkProvider.linkList.data!.length + 1,
+                    itemBuilder: (context, index) {
+                      if (index == linkProvider.linkList.data!.length) {
+                        return Container(
+                          padding: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: kLightPrimaryColor,
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(context, AddLinkView.id);
+                                },
+                                icon: Icon(Icons.add, color: kPrimaryColor),
                               ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  IconButton(
-                                    onPressed: () {
-                                      Navigator.pushNamed(
-                                        context,
-                                        AddLinkView.id,
-                                      );
-                                    },
-                                    icon: Icon(Icons.add, color: kPrimaryColor),
-                                  ),
-                                  Text(
-                                    "Add Link",
-                                    style: TextStyle(
-                                      color: kPrimaryColor.withOpacity(0.7),
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
+                              Text(
+                                "Add Link",
+                                style: TextStyle(
+                                  color: kPrimaryColor.withOpacity(0.7),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            );
-                          } else if (index < snapshot.data!.length) {
-                            return Container(
-                              padding: EdgeInsets.all(8),
-                              decoration: BoxDecoration(
-                                color: kLightSecondaryColor,
-                                borderRadius: BorderRadius.circular(16),
+                            ],
+                          ),
+                        );
+                      } else if (index < linkProvider.linkList.data!.length) {
+                        return Container(
+                          padding: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: kLightSecondaryColor,
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Column(
+                            spacing: 12,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                linkProvider.linkList.data![index].title
+                                    .toUpperCase(),
+                                style: TextStyle(
+                                  color: kOnSecondaryColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                ),
                               ),
-                              child: Column(
-                                spacing: 12,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    snapshot.data![index].title.toUpperCase(),
-                                    style: TextStyle(
-                                      color: kOnSecondaryColor,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                  Text(
-                                    "@${snapshot.data![index].username ?? "UserName"}",
-                                    style: TextStyle(
-                                      color: kOnSecondaryColor.withOpacity(0.7),
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ],
+                              Text(
+                                "@${linkProvider.linkList.data![index].username ?? "UserName"}",
+                                style: TextStyle(
+                                  color: kOnSecondaryColor.withOpacity(0.7),
+                                  fontSize: 12,
+                                ),
                               ),
-                            );
-                          }
-                        },
-                      ),
-                    );
-                  } else {
-                    return Text("Error !!");
-                  }
-                },
-              ),
-            ],
-          ),
+                            ],
+                          ),
+                        );
+                      }
+                    },
+                  ),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );
   }
 }
 ===== D:\Android\kick_lance_project\betweener_app\lib\views_features\links\add_link_view.dart =====
-import 'package:betweeener_app/controllers/link_controller.dart';
+import 'package:betweeener_app/providers/link_provider.dart';
 import 'package:betweeener_app/views_features/widgets/custom_text_form_field.dart';
 import 'package:betweeener_app/views_features/widgets/secondary_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class AddLinkView extends StatefulWidget {
+class AddLinkView extends StatelessWidget {
   static String id = "/addNewLink";
-  const AddLinkView({super.key});
+   AddLinkView({super.key});
 
-  @override
-  State<AddLinkView> createState() => _AddLinkViewState();
-}
-
-class _AddLinkViewState extends State<AddLinkView> {
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
-  final TextEditingController titleController = TextEditingController();
-  final TextEditingController linkController = TextEditingController();
 
-  void _addLink() {
-    if (_key.currentState!.validate()) {
-      final body = {'title': titleController.text, 'link': linkController.text};
-      addLink(context, body).then((value) => Navigator.pop(context)).catchError(
-        (error) {
-          print(error.toString());
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(error.toString())));
-        },
-      );
-    }
-  }
+  final TextEditingController titleController = TextEditingController();
+
+  final TextEditingController linkController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -1681,7 +1689,19 @@ class _AddLinkViewState extends State<AddLinkView> {
               ),
               SizedBox(height: 8),
               SecondaryButtonWidget(
-                onTap: _addLink,
+                onTap: () async {
+                  if (_key.currentState!.validate()) {
+                    final body = {
+                      'title': titleController.text,
+                      'link': linkController.text,
+                    };
+                    await Provider.of<LinkProvider>(
+                      context,
+                      listen: false,
+                    ).addLinkToList(body);
+                    Navigator.pop(context);
+                  }
+                },
                 text: "ADD",
                 width: MediaQuery.of(context).size.width / 3,
               ),
@@ -1693,41 +1713,23 @@ class _AddLinkViewState extends State<AddLinkView> {
   }
 }
 ===== D:\Android\kick_lance_project\betweener_app\lib\views_features\links\edit_link_view.dart =====
-import 'package:betweeener_app/controllers/link_controller.dart';
-import 'package:betweeener_app/views_features/profile/profile_view.dart';
+import 'package:betweeener_app/providers/link_provider.dart';
 import 'package:betweeener_app/views_features/widgets/custom_text_form_field.dart';
 import 'package:betweeener_app/views_features/widgets/secondary_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class EditLinkView extends StatefulWidget {
+class EditLinkView extends StatelessWidget {
   static String id = "/editLink";
-  const EditLinkView({super.key});
+  EditLinkView({super.key});
 
-  @override
-  State<EditLinkView> createState() => _AddLinkViewState();
-}
-
-class _AddLinkViewState extends State<EditLinkView> {
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
+
   final TextEditingController titleController = TextEditingController();
+
   final TextEditingController linkController = TextEditingController();
+
   late int idLink;
-
-  void _updateLink(int idLink) {
-    if (_key.currentState!.validate()) {
-      final body = {'title': titleController.text, 'link': linkController.text};
-
-      updateLink(context, body, idLink)
-          .then((value) {
-            Navigator.pop(context);
-          })
-          .catchError((error) {
-            ScaffoldMessenger.of(
-              context,
-            ).showSnackBar(SnackBar(content: Text(error.toString())));
-          });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -1775,7 +1777,23 @@ class _AddLinkViewState extends State<EditLinkView> {
               ),
               SizedBox(height: 8),
               SecondaryButtonWidget(
-                onTap: () => _updateLink(idLink),
+                onTap: () async {
+                  if (_key.currentState!.validate()) {
+                    final body = {
+                      'title': titleController.text,
+                      'link': linkController.text,
+                    };
+                    try {
+                      await Provider.of<LinkProvider>(
+                        context,
+                        listen: false,
+                      ).updateLinkList(body, idLink);
+                      Navigator.pop(context);
+                    } catch (e) {
+                      print("Error: ${e.toString()}");
+                    }
+                  }
+                },
                 text: "SAVE",
                 width: MediaQuery.of(context).size.width / 3,
               ),
@@ -1879,11 +1897,12 @@ class OnBoardingView extends StatelessWidget {
   }
 }
 ===== D:\Android\kick_lance_project\betweener_app\lib\views_features\profile\friend_profile_view.dart =====
-import 'package:betweeener_app/controllers/user_controller.dart';
 import 'package:betweeener_app/core/util/constants.dart';
 import 'package:betweeener_app/models/user.dart';
+import 'package:betweeener_app/providers/user_provider.dart';
 import 'package:betweeener_app/views_features/widgets/link_card.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class FriendProfileView extends StatefulWidget {
   static String id = "/friendProfileView";
@@ -1894,7 +1913,6 @@ class FriendProfileView extends StatefulWidget {
 }
 
 class _FriendProfileViewState extends State<FriendProfileView> {
-  bool isFollowing = false;
   UserClass? userFriend;
 
   @override
@@ -1902,23 +1920,20 @@ class _FriendProfileViewState extends State<FriendProfileView> {
     super.didChangeDependencies();
     if (userFriend == null) {
       userFriend = ModalRoute.of(context)!.settings.arguments as UserClass;
-      checkIfIsFollowing(userFriend!.id!)
-          .then((staus) {
-            if (mounted) {
-              setState(() {
-                isFollowing = staus;
-              });
-            }
-          })
-          .catchError((error) => print(error.toString()));
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        Provider.of<UserProvider>(
+          context,
+          listen: false,
+        ).checkIfIsFollowing(userFriend!.id!);
+      });
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    // final UserClass userFriend =
-    //     ModalRoute.of(context)!.settings.arguments as UserClass;
-
+    final bool isFollowing =
+        Provider.of<UserProvider>(context, listen: false).isFollowing.data ??
+        false;
     if (userFriend == null) {
       return const Center(child: CircularProgressIndicator());
     }
@@ -1948,7 +1963,7 @@ class _FriendProfileViewState extends State<FriendProfileView> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     ClipRRect(
-                      borderRadius: BorderRadiusGeometry.circular(100),
+                      borderRadius: BorderRadius.circular(100),
                       child: Image.asset(
                         "assets/imgs/profile.png",
                         width: 85,
@@ -1981,12 +1996,10 @@ class _FriendProfileViewState extends State<FriendProfileView> {
                               'followee_id': userFriend!.id!.toString(),
                             };
                             try {
-                              await followUser(body);
-                              if (mounted) {
-                                setState(() {
-                                  isFollowing = true;
-                                });
-                              }
+                              Provider.of<UserProvider>(
+                                context,
+                                listen: false,
+                              ).followUser(body);
                             } catch (e) {
                               print("Error: $e");
                               ScaffoldMessenger.of(context).showSnackBar(
@@ -2049,48 +2062,19 @@ class _FriendProfileViewState extends State<FriendProfileView> {
   }
 }
 ===== D:\Android\kick_lance_project\betweener_app\lib\views_features\profile\profile_view.dart =====
-import 'package:betweeener_app/controllers/link_controller.dart';
-import 'package:betweeener_app/controllers/user_controller.dart';
+import 'package:betweeener_app/core/helpers/api_response.dart';
 import 'package:betweeener_app/core/util/constants.dart';
-import 'package:betweeener_app/models/link_response_model.dart';
-import 'package:betweeener_app/models/user.dart';
+import 'package:betweeener_app/providers/link_provider.dart';
+import 'package:betweeener_app/providers/user_provider.dart';
 import 'package:betweeener_app/views_features/widgets/floating_action_btn.dart';
 import 'package:betweeener_app/views_features/widgets/link_card.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class ProfileView extends StatefulWidget {
+class ProfileView extends StatelessWidget {
   static String id = '/profileView';
 
   const ProfileView({super.key});
-
-  @override
-  State<ProfileView> createState() => _ProfileViewState();
-}
-
-class _ProfileViewState extends State<ProfileView> {
-  late Future<User> user;
-  late Future<List<LinkElement>> links;
-  late Future<Map<String, dynamic>> follows;
-
-  @override
-  void initState() {
-    user = getCurrentUser(context);
-    links = getUserLinks();
-    super.initState();
-    follows = getUserFollows();
-  }
-
-  void _deleteLink(int idLink) {
-    deleteLink(context, idLink)
-        .then((value) {
-          getUserLinks();
-        })
-        .catchError((error) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(error.toString())));
-        });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -2128,102 +2112,91 @@ class _ProfileViewState extends State<ProfileView> {
                             height: 85,
                           ),
                         ),
-                        FutureBuilder(
-                          future: user,
-                          builder: (context, snapshot) {
-                            if (snapshot.connectionState ==
-                                ConnectionState.waiting) {
-                              return Center(child: Text("Loading.."));
-                            } else if (snapshot.hasError) {
-                              return Center(child: Text("Error !!"));
-                            } else {
-                              return Column(
-                                spacing: 8,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    snapshot.data!.user!.name!,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
+                        Column(
+                          spacing: 8,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "${Provider.of<UserProvider>(context).currentUser!.user!.name}",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                            Text(
+                              "${Provider.of<UserProvider>(context).currentUser!.user!.email}",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                              ),
+                            ),
+                            Text(
+                              "+9700000000",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                              ),
+                            ),
+                            Consumer<UserProvider>(
+                              builder: (_, userProvider, _) {
+                                if (userProvider.userFollows.status ==
+                                    Status.LOADING) {
+                                  return Center(
+                                    child: CircularProgressIndicator(),
+                                  );
+                                } else if (userProvider.userFollows.status ==
+                                    Status.ERROR) {
+                                  return Text(
+                                    "${userProvider.userFollows.message}",
+                                  );
+                                }
+                                return Row(
+                                  spacing: 8,
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 12,
+                                        vertical: 4,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: kSecondaryColor,
+                                        borderRadius: BorderRadius.circular(7),
+                                      ),
+                                      child: Text(
+                                        "followers ${userProvider.userFollows.data!['followers_count']}",
+                                        style: TextStyle(
+                                          fontSize: 10,
+                                          color: kPrimaryColor,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    snapshot.data!.user!.email!,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12,
+                                    Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 12,
+                                        vertical: 4,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: kSecondaryColor,
+                                        borderRadius: BorderRadius.circular(7),
+                                      ),
+                                      child: Text(
+                                        "following ${userProvider.userFollows.data!['following_count']}",
+                                        style: TextStyle(
+                                          fontSize: 10,
+                                          color: kPrimaryColor,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    "+9700000000",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                  FutureBuilder(
-                                    future: follows,
-                                    builder: (context, snapshot) {
-                                      if (snapshot.connectionState ==
-                                          ConnectionState.waiting) {
-                                        return Text("Laoding..");
-                                      } else if (snapshot.hasError) {
-                                        return Text(snapshot.error.toString());
-                                      } else {
-                                        return Row(
-                                          spacing: 8,
-                                          children: [
-                                            Container(
-                                              padding: EdgeInsets.symmetric(
-                                                horizontal: 12,
-                                                vertical: 4,
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: kSecondaryColor,
-                                                borderRadius:
-                                                    BorderRadius.circular(7),
-                                              ),
-                                              child: Text(
-                                                "followers ${snapshot.data!['followers_count']}",
-                                                style: TextStyle(
-                                                  fontSize: 10,
-                                                  color: kPrimaryColor,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                            ),
-                                            Container(
-                                              padding: EdgeInsets.symmetric(
-                                                horizontal: 12,
-                                                vertical: 4,
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: kSecondaryColor,
-                                                borderRadius:
-                                                    BorderRadius.circular(7),
-                                              ),
-                                              child: Text(
-                                                "following ${snapshot.data!['following_count']}",
-                                                style: TextStyle(
-                                                  fontSize: 10,
-                                                  color: kPrimaryColor,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        );
-                                      }
-                                    },
-                                  ),
-                                ],
-                              );
-                            }
-                          },
+                                  ],
+                                );
+                              },
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -2244,37 +2217,35 @@ class _ProfileViewState extends State<ProfileView> {
               ],
             ),
             SizedBox(height: 12),
-            FutureBuilder(
-              future: links,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
+            Consumer<LinkProvider>(
+              builder: (_, linkProvider, _) {
+                if (linkProvider.linkList.status == Status.LOADING) {
                   return Center(child: CircularProgressIndicator());
-                } else if (snapshot.hasError) {
-                  return Center(child: Text(snapshot.error.toString()));
-                } else if (!snapshot.hasData) {
-                  return Center(child: Text("No Links found!"));
-                } else {
-                  return Expanded(
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: snapshot.data!.length,
-                      itemBuilder: (context, index) {
-                        return LinkCard(
-                          isSlidable: true,
-                          title: snapshot.data![index].title,
-                          link: snapshot.data![index].link,
-                          color: index.isOdd
-                              ? kLightDangerColor
-                              : kLightPrimaryColor,
-                          idLink: snapshot.data![index].id,
-                          onDelete: () {
-                            _deleteLink(snapshot.data![index].id);
-                          },
-                        );
-                      },
-                    ),
-                  );
+                } else if (linkProvider.linkList.status == Status.ERROR) {
+                  return Text("${linkProvider.linkList.message}");
                 }
+                return Expanded(
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: linkProvider.linkList.data!.length,
+                    itemBuilder: (context, index) {
+                      return LinkCard(
+                        isSlidable: true,
+                        title: linkProvider.linkList.data![index].title,
+                        link: linkProvider.linkList.data![index].link,
+                        color: index.isOdd
+                            ? kLightDangerColor
+                            : kLightPrimaryColor,
+                        idLink: linkProvider.linkList.data![index].id,
+                        onDelete: () async {
+                          await linkProvider.deleteLinkFromList(
+                            linkProvider.linkList.data![index].id,
+                          );
+                        },
+                      );
+                    },
+                  ),
+                );
               },
             ),
           ],
@@ -2330,25 +2301,22 @@ class ReceiveView extends StatelessWidget {
   }
 }
 ===== D:\Android\kick_lance_project\betweener_app\lib\views_features\search\search_view.dart =====
-import 'package:betweeener_app/controllers/user_controller.dart';
+import 'package:betweeener_app/core/helpers/api_response.dart';
 import 'package:betweeener_app/models/user.dart';
+import 'package:betweeener_app/providers/user_provider.dart';
 import 'package:betweeener_app/views_features/profile/friend_profile_view.dart';
 import 'package:betweeener_app/views_features/widgets/custom_text_form_field.dart';
 import 'package:betweeener_app/views_features/widgets/result_search_card.dart';
 import 'package:betweeener_app/views_features/widgets/secondary_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class SearchView extends StatefulWidget {
+class SearchView extends StatelessWidget {
   static String id = "/searchView";
-  const SearchView({super.key});
+   SearchView({super.key});
 
-  @override
-  State<SearchView> createState() => _SearchViewState();
-}
-
-class _SearchViewState extends State<SearchView> {
   final TextEditingController searchController = TextEditingController();
-  Future<List<UserClass>>? searchUsers;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -2385,9 +2353,10 @@ class _SearchViewState extends State<SearchView> {
                     child: SizedBox(
                       child: SecondaryButtonWidget(
                         onTap: () {
-                          setState(() {
-                            searchUsers = searchUser(searchController.text);
-                          });
+                          Provider.of<UserProvider>(
+                            context,
+                            listen: false,
+                          ).searchUser(searchController.text);
                         },
                         text: "search",
                       ),
@@ -2396,46 +2365,77 @@ class _SearchViewState extends State<SearchView> {
                 ],
               ),
               SizedBox(height: 16),
-              searchUsers == null
+              Provider.of<UserProvider>(context, listen: false).usersList ==
+                      null
                   ? Center(child: Text("Search Friend By Name."))
-                  : FutureBuilder<List<UserClass>>(
-                      future: searchUsers,
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState ==
-                            ConnectionState.waiting) {
+                  : Consumer<UserProvider>(
+                      builder: (_, userProvider, _) {
+                        if (userProvider.usersList.status == Status.LOADING) {
                           return Center(child: CircularProgressIndicator());
-                        } else if (snapshot.hasError) {
-                          return Center(child: Text(snapshot.error.toString()));
-                        } else if (!snapshot.hasData || snapshot.data == null) {
-                          return Center(child: Text("No Data Returned."));
-                        } else if (snapshot.data!.isEmpty) {
-                          return Center(
-                            child: Text("No User Found for this name"),
-                          );
-                        } else {
-                          return ListView.builder(
-                            physics: NeverScrollableScrollPhysics(),
-                            shrinkWrap: true,
-                            itemCount: snapshot.data!.length,
-                            itemBuilder: (context, index) {
-                              final UserClass friendUser =
-                                  snapshot.data![index];
-                              return ResultSearchCard(
-                                name: snapshot.data![index].name!,
-                                email: snapshot.data![index].email!,
-                                ontap: () {
-                                  Navigator.pushNamed(
-                                    context,
-                                    FriendProfileView.id,
-                                    arguments: friendUser,
-                                  );
-                                },
-                              );
-                            },
-                          );
+                        } else if (userProvider.usersList.status ==
+                            Status.ERROR) {
+                          return Text("${userProvider.usersList.message}");
                         }
+                        return ListView.builder(
+                          physics: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: userProvider.usersList.data!.length,
+                          itemBuilder: (context, index) {
+                            final UserClass friendUser =
+                                userProvider.usersList.data![index];
+                            return ResultSearchCard(
+                              name: userProvider.usersList.data![index].name!,
+                              email: userProvider.usersList.data![index].email!,
+                              ontap: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  FriendProfileView.id,
+                                  arguments: friendUser,
+                                );
+                              },
+                            );
+                          },
+                        );
                       },
                     ),
+              // FutureBuilder<List<UserClass>>(
+              //     future: searchUsers,
+              //     builder: (context, snapshot) {
+              //       if (snapshot.connectionState ==
+              //           ConnectionState.waiting) {
+              //         return Center(child: CircularProgressIndicator());
+              //       } else if (snapshot.hasError) {
+              //         return Center(child: Text(snapshot.error.toString()));
+              //       } else if (!snapshot.hasData || snapshot.data == null) {
+              //         return Center(child: Text("No Data Returned."));
+              //       } else if (snapshot.data!.isEmpty) {
+              //         return Center(
+              //           child: Text("No User Found for this name"),
+              //         );
+              //       } else {
+              //         return ListView.builder(
+              //           physics: NeverScrollableScrollPhysics(),
+              //           shrinkWrap: true,
+              //           itemCount: snapshot.data!.length,
+              //           itemBuilder: (context, index) {
+              //             final UserClass friendUser =
+              //                 snapshot.data![index];
+              //             return ResultSearchCard(
+              //               name: snapshot.data![index].name!,
+              //               email: snapshot.data![index].email!,
+              //               ontap: () {
+              //                 Navigator.pushNamed(
+              //                   context,
+              //                   FriendProfileView.id,
+              //                   arguments: friendUser,
+              //                 );
+              //               },
+              //             );
+              //           },
+              //         );
+              //       }
+              //     },
+              //   ),
             ],
           ),
         ),
