@@ -43,6 +43,7 @@ class SearchView extends StatelessWidget {
                         if (value == null || value.isEmpty) {
                           return "Please Write a valid Friend Name";
                         }
+                        return null;
                       },
                     ),
                   ),
@@ -95,44 +96,6 @@ class SearchView extends StatelessWidget {
                         );
                       },
                     ),
-              // FutureBuilder<List<UserClass>>(
-              //     future: searchUsers,
-              //     builder: (context, snapshot) {
-              //       if (snapshot.connectionState ==
-              //           ConnectionState.waiting) {
-              //         return Center(child: CircularProgressIndicator());
-              //       } else if (snapshot.hasError) {
-              //         return Center(child: Text(snapshot.error.toString()));
-              //       } else if (!snapshot.hasData || snapshot.data == null) {
-              //         return Center(child: Text("No Data Returned."));
-              //       } else if (snapshot.data!.isEmpty) {
-              //         return Center(
-              //           child: Text("No User Found for this name"),
-              //         );
-              //       } else {
-              //         return ListView.builder(
-              //           physics: NeverScrollableScrollPhysics(),
-              //           shrinkWrap: true,
-              //           itemCount: snapshot.data!.length,
-              //           itemBuilder: (context, index) {
-              //             final UserClass friendUser =
-              //                 snapshot.data![index];
-              //             return ResultSearchCard(
-              //               name: snapshot.data![index].name!,
-              //               email: snapshot.data![index].email!,
-              //               ontap: () {
-              //                 Navigator.pushNamed(
-              //                   context,
-              //                   FriendProfileView.id,
-              //                   arguments: friendUser,
-              //                 );
-              //               },
-              //             );
-              //           },
-              //         );
-              //       }
-              //     },
-              //   ),
             ],
           ),
         ),

@@ -84,6 +84,8 @@ The project follows a **Provider-based architecture** with a clear separation of
 3. **Run the app**
 - flutter run
 
+---
+
 ## 🖼️ Screenshots
 
 ![app_view1](assets/imgs/view1.png)
@@ -93,6 +95,16 @@ The project follows a **Provider-based architecture** with a clear separation of
 ![app_view3](assets/imgs/view3.png)
 
 ![app_view4](assets/imgs/view4.png)
+
+---
+
+## 📦 Download APK  
+
+You can download the latest version of the **Betweener App** APK directly from Google Drive:  
+
+👉 [**Download Betweener App (APK)**](https://drive.google.com/file/d/1YAwn4lzxc3xYpiii38NTtt3W8YL3MelA/view?usp=sharing)  
+
+---
 
 ## 🌐 Social Links
 - 👨‍💻 Developer: [ِAhmed Meqdad]

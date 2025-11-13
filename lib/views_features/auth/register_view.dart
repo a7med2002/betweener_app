@@ -58,7 +58,6 @@ class RegisterView extends StatelessWidget {
             Navigator.pop(context);
           },
           icon: const Icon(Icons.arrow_back_ios),
-          //replace with our own icon data.
         ),
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -92,6 +91,7 @@ class RegisterView extends StatelessWidget {
                       if (value == null || value.isEmpty) {
                         return "name can't be empty";
                       }
+                      return null;
                     },
                   ),
                   const SizedBox(height: 14),
@@ -103,6 +103,7 @@ class RegisterView extends StatelessWidget {
                       if (value == null || value.isEmpty) {
                         return "email can't be empty";
                       }
+                      return null;
                     },
                   ),
                   const SizedBox(height: 14),
@@ -115,6 +116,7 @@ class RegisterView extends StatelessWidget {
                       if (value == null || value.isEmpty) {
                         return "password can't be empty";
                       }
+                      return null;
                     },
                   ),
                   const SizedBox(height: 24),

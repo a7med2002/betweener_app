@@ -48,6 +48,7 @@ class EditLinkView extends StatelessWidget {
                   if (value == null || value.isEmpty) {
                     return "title can't be empty";
                   }
+                  return null;
                 },
               ),
               CustomTextFormField(
@@ -58,6 +59,7 @@ class EditLinkView extends StatelessWidget {
                   if (value == null || value.isEmpty) {
                     return "link can't be empty";
                   }
+                  return null;
                 },
               ),
               SizedBox(height: 8),
